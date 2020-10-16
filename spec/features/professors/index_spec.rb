@@ -3,7 +3,6 @@ require 'rails_helper'
 describe "As a visitor" do
   describe "when I visit '/professors'" do
     it "I see a list of professors with name, age, and specialty" do
-      visit "/professors"
 
       prof_1 = Professor.create({
         name: "Minerva McGonagall",
@@ -22,6 +21,8 @@ describe "As a visitor" do
         age: 36,
         specialty: "Seer"
         })
+
+      visit "/professors"
 
       expect(page).to have_content("Hogwarts Staff")
       expect(page).to have_content("#{prof_1.name}")
