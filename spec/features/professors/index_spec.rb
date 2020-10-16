@@ -25,18 +25,18 @@ describe 'As a visitor' do
       )
 
       visit '/professors'
-        expect(page).to have_content(@mcgonagall.name)
-        expect(page).to have_content(@snape.name)
-        expect(page).to have_content(@flitwick.name)
-        expect(page).to have_content(@sprout.name)
-        expect(page).to have_content(@mcgonagall.age)
-        expect(page).to have_content(@snape.age)
-        expect(page).to have_content(@flitwick.age)
-        expect(page).to have_content(@sprout.age)
-        expect(page).to have_content(@mcgonagall.specialty)
-        expect(page).to have_content(@snape.specialty)
-        expect(page).to have_content(@flitwick.specialty)
-        expect(page).to have_content(@sprout.specialty)
+      expect(page).to have_content(@mcgonagall.name)
+      expect(page).to have_content(@snape.name)
+      expect(page).to have_content(@flitwick.name)
+      expect(page).to have_content(@sprout.name)
+      expect(page).to have_content(@mcgonagall.age)
+      expect(page).to have_content(@snape.age)
+      expect(page).to have_content(@flitwick.age)
+      expect(page).to have_content(@sprout.age)
+      expect(page).to have_content(@mcgonagall.specialty)
+      expect(page).to have_content(@snape.specialty)
+      expect(page).to have_content(@flitwick.specialty)
+      expect(page).to have_content(@sprout.specialty)
     end
   end
 end
