@@ -11,4 +11,21 @@ RSpec.describe Professor, type: :model do
     it {should have_many :professor_students}
     it {should have_many(:students).through(:professor_students)}
   end
+
+  describe 'class methods' do
+    let!(:professor1) { create(:professor) } 
+    let!(:professor2) { create(:professor, name: 'Taylor Phillips') } 
+
+    let!(:student1) { create(:student) } 
+    let!(:student2) { create(:student, name: "Ron Weasley") } 
+    let!(:student3) { create(:student, name: "Luna Lovegood") } 
+
+    let!(:professor_student1) { create(:professor_student, professor_id: professor1.id, student_id: student1.id) } 
+    let!(:professor_student2) { create(:professor_student, professor_id: professor1.id, student_id: student2.id) } 
+    let!(:professor_student3) { create(:professor_student, professor_id: professor2.id, student_id: student3.id) } 
+
+    it '.students' do
+      expect(professor1.students).to eq([student1, student2])
+    end
+  end
 end
