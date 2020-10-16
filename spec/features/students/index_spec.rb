@@ -62,7 +62,7 @@ describe "As a visitor," do
 
       expect(page).to have_content("Harry Potter: 3")
       expect(page).to have_content("Draco Malfoy: 2")
-      expect(page).to have_content("Luna Lovegood: 3")
+      expect(page).to have_content("Luna Lovegood: 1")
     end
   end
 end
