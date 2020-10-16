@@ -71,7 +71,7 @@ describe 'As a visitor' do
       expect(page).to have_content('Oliver Wood: 3')
       expect(page).to have_content('Luna Lovegood: 3')
       expect(page).to have_content('Cedric Diggory: 4')
-      save_and_open_page
+      
     end
   end
 end
