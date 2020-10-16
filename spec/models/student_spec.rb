@@ -15,6 +15,8 @@ RSpec.describe Student, type: :model do
 
   describe 'instance methods' do
     it 'can determine a students number of profesors' do
+      
+      harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
       malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
       snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
       hagarid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
@@ -25,6 +27,7 @@ RSpec.describe Student, type: :model do
       ProfessorStudent.create(student_id: malfoy.id, professor_id: lupin.id)
 
       expect(malfoy.num_of_profs).to eq(3)
+      expect(harry.num_of_profs).to eq(0)
     end
   end
 
