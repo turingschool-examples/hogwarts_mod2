@@ -1,0 +1,6 @@
+<h1>Welcome to <%= @professor.name %>'s page. here is a list of students</h1>
+
+<p>Average Age Of Students: <%= @professor.average_student_age.round(1) %></p>
+<% @professor.students.each do |student| %>
+  <p>Student Name: <%= student.name %></p>
+<% end %>
