@@ -13,4 +13,13 @@ RSpec.describe Student, type: :model do
     it {should have_many(:professors).through(:professor_students)}
   end
 
+  describe 'class methods' do
+    it "average_age" do
+      @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+      @longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
+
+      expect(Student.average_age).to eq(11.33)
+    end
+  end
 end
