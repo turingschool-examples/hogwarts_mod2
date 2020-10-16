@@ -34,5 +34,11 @@ describe "As a visitor," do
         expect(page).to have_content("1")
       end
     end
+    it "On all index pages, all information is listed alphabetically." do
+      visit '/students'
+      expect(page.all('tr')[0]).to have_content("Draco Malfoy")
+      expect(page.all('tr')[1]).to have_content("Harry Potter")
+      expect(page.all('tr')[2]).to have_content("Neville Longbottom")
+    end
   end
 end

@@ -1,7 +1,10 @@
 
-
-<% @professors.each do |professor| %>
-<p><%= professor.name %><br>
-<%= professor.age %><br>
-<%= professor.specialty %><br><p>
-<% end %>
+<table>
+  <% @professors.each do |professor| %>
+  <tr id = "<%=professor.id%>">
+    <td> <%=professor.name%> </td>
+    <td> <%=professor.age%> </td>
+    <td> <%=professor.specialty%> </td>
+  </tr>
+  <% end %>
+</table>
