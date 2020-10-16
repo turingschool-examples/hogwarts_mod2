@@ -1,7 +1,7 @@
 <h2>List of all our Professors</h2>
 
-<p><%= @professors.each do |professor| %></p>
-  <p>Name: <%= professor.name %></p>
+<p><% @professors.each do |professor| %></p>
+  <p><h3>Name: <%= professor.name %></h3></p>
   <p>Age: <%= professor.age %></p>
   <p>Specialty: <%= professor.specialty %></p>
 <% end %>
