@@ -2,6 +2,8 @@
 
 <% sorted_professors = @professors.sort_by { |professor| professor.name} %>
 
-<% sorted_professors.each do |professor| %>
-  <p><%= "Name: #{professor.name}, Age: #{professor.age}, Specialty: #{professor.specialty}" %>
-<% end %>
+<section id='professor-info'>
+  <% sorted_professors.each do |professor| %>
+    <p><%= "Name: #{professor.name}, Age: #{professor.age}, Specialty: #{professor.specialty}" %>
+  <% end %>
+</section>

@@ -2,6 +2,8 @@
 
 <% sorted_students = @students.sort_by { |student| student.name } %>
 
-<% sorted_students.each do |student| %>
-  <p><%= "#{student.name}: #{student.professors.length}" %></p>
-<% end %>
+<section id='student-info'>
+  <% sorted_students.each do |student| %>
+    <p><%= "#{student.name}: #{student.professors.length}" %></p>
+  <% end %>
+</section>
