@@ -20,5 +20,22 @@ describe "As a visitor" do
       expect(page).to have_content("#{malfoy.name}: 2")
       expect(page).to have_content("#{longbottom.name}: 1")
     end
+
+    it 'I see a list of students displayed alphabetically' do
+      harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+      longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
+
+      visit '/students'
+
+      expect(harry.name).to appear_before(longbottom.name)
+      expect(harry.name).to_not appear_before(malfoy.name)
+
+      expect(malfoy.name).to appear_before(harry.name)
+      expect(malfoy.name).to appear_before(longbottom.name)
+
+      expect(longbottom.name).to_not appear_before(harry.name)
+      expect(longbottom.name).to_not appear_before(malfoy.name)
+    end
   end
 end
