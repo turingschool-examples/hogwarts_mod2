@@ -1,0 +1,9 @@
+<%= content_tag :h1, "The Fine Professors of Hogwarts:" %>
+
+<% @professors.each do |professor| %>
+  <div class='professor' id='professor-<%= professor.id %>'>
+      <%= content_tag :p, "Name: #{professor.name}" %>
+      <%= content_tag :p, "Age: #{professor.age}" %>
+      <%= content_tag :p, "Specialty: #{professor.specialty}" %>
+  </div>
+<% end %>

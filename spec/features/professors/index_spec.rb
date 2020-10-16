@@ -12,7 +12,7 @@ RSpec.describe "Professors Features:" do
         visit '/professors'
 
         professors.each do |professor|
-          within("professor-#{professor.id}") do
+          within("#professor-#{professor.id}") do
             expect(page).to have_content("Name: #{professor.name}")
             expect(page).to have_content("Age: #{professor.age}")
             expect(page).to have_content("Specialty: #{professor.specialty}")
