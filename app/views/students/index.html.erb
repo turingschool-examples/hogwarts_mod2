@@ -1,0 +1,5 @@
+<section class='students'>
+  <% @students.each do |student| %>
+    <p class="student" id="student-<%= student.id %>"><%= student.name %>: <%= student.professor_count %></p>
+  <% end %>
+</section>
