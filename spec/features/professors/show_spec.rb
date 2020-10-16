@@ -55,6 +55,7 @@ RSpec.describe 'Professors Index Page' do
 
       expect(page).to have_content('All Students')
 
+      # expect(page).to have_content(@professor_1.name)
       expect(page).to have_content(@student_1.name)
       expect(page).to have_content(@student_2.name)
       expect(page).to have_content(@student_3.name)
