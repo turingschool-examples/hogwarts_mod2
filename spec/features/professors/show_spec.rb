@@ -73,3 +73,52 @@ describe "As a visitor," do
     end
   end
 end
+
+describe "As a visitor" do
+  describe "When I visit '/professors/:id'" do
+    it "I see the average age of all students for that professor" do
+      professor_1 = Professor.create(
+        name: "Severus Snape",
+        age: 45,
+        specialty: "Betrayal"
+      )
+      professor_2 = Professor.create(
+        name: "Helena Handbasket",
+        age: 50,
+        specialty: "Witches Studies"
+      )
+      student_1 = Student.create(
+        name: "Jake Potter",
+        age: 34,
+        house: "Ravenclaw"
+      )
+      student_2 = Student.create(
+        name: "Tommy Hogwarts",
+        age: 12,
+        house: "Gryffindor"
+      )
+      student_3 = Student.create(
+        name: "Jane Magic",
+        age: 15,
+        house: "Hufflepuff"
+      )
+      prof_stdnt_1 = ProfessorStudent.create(
+        professor_id: professor_1.id,
+        student_id: student_1.id
+      )
+      prof_stdnt_2 = ProfessorStudent.create(
+        professor_id: professor_1.id,
+        student_id: student_2.id
+      )
+      prof_stdnt_3 = ProfessorStudent.create(
+        professor_id: professor_1.id,
+        student_id: student_3.id
+      )
+
+      visit "/professors/#{professor_1.id}"
+
+      expect(page).to have_content("Average age of #{professor_1.name}'s students: 20.3'")
+      expect(page).to have_no_content(professor_2.name)
+    end
+  end
+end
