@@ -55,11 +55,17 @@ RSpec.describe 'Professors Index Page' do
 
       expect(page).to have_content('All Students')
 
-      # expect(page).to have_content(@professor_1.name)
       expect(page).to have_content(@student_1.name)
       expect(page).to have_content(@student_2.name)
       expect(page).to have_content(@student_3.name)
       expect(page).to_not have_content(@student_4.name)
+    end
+
+    it 'can see the average of all the professors students' do
+      visit "/professors/#{@professor_1.id}"
+
+      expect(page).to have_content('Average Student Age')
+      expect(page).to have_content('12.33')
     end
   end
 end
