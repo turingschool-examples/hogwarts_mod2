@@ -10,7 +10,7 @@ describe "As a visitor" do
       visit "/professors/#{snape.id}"
 
       expect(page).to have_content(harry.name)
-      expect(page).to have_content(longbottom.age)
+      expect(page).to have_content(longbottom.name)
     end
   end
 end
