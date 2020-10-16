@@ -20,6 +20,11 @@ describe 'professors show page' do
     expect(page).to have_content("#{professor1.name}'s Students")
   end
 
+  it 'can see average student age for professor' do
+    expect(page).to have_content('Average Student Age')
+    expect(page).to have_content(professor1.average_student_age)
+  end
+
   it 'can see professors students' do
     expect(page).to have_content("#{student1.name}")
     expect(page).to have_content("#{student2.name}")
