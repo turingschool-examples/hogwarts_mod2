@@ -21,11 +21,26 @@ describe "As a visitor" do
         specialty: "Seer"
         })
 
-      student_1 = Student.create!({name: "Neville Longbottom"})
-      student_2 = Student.create!({name: "Hermione Granger"})
-      student_3 = Student.create!({name: "Luna Lovegood"})
-      student_4 = Student.create!({name: "Harry Potter"})
-      student_5 = Student.create!({name: "Ron Weasley"})
+      student_1 = Student.create!({
+        name: "Neville Longbottom",
+        age: 18,
+        house: "Gryffindor"})
+      student_2 = Student.create!({
+        name: "Hermione Granger",
+        age: 19,
+        house: "Gryffindor"})
+      student_3 = Student.create!({
+        name: "Luna Lovegood",
+        age: 18,
+        house: "Ravenclaw"})
+      student_4 = Student.create!({
+        name: "Harry Potter",
+        age: 19,
+        house: "Gryffindor"})
+      student_5 = Student.create!({
+        name: "Ron Weasley",
+        age: 18,
+        house: "Gryffindor"})
 
       ProfessorStudents.create!(student: student1, professor: prof_1)
       ProfessorStudents.create!(student: student1, professor: prof_2)
