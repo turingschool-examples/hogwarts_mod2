@@ -41,14 +41,21 @@ describe "As a visitor" do
         name: "Ron Weasley",
         age: 18,
         house: "Gryffindor"})
-    end
-
-    it "I see a list of the names of the students the professors have." do
 
       @prof_1.professor_students.create(student: @student_1)
       @prof_1.professor_students.create(student: @student_2)
       @prof_1.professor_students.create(student: @student_3)
       @prof_1.professor_students.create(student: @student_5)
+      @prof_2.professor_students.create(student: @student_1)
+      @prof_2.professor_students.create(student: @student_2)
+      @prof_2.professor_students.create(student: @student_4)
+      @prof_2.professor_students.create(student: @student_5)
+      @prof_3.professor_students.create(student: @student_2)
+      @prof_3.professor_students.create(student: @student_3)
+      @prof_3.professor_students.create(student: @student_4)
+    end
+
+    it "I see a list of the names of the students the professors have." do
 
       visit "/professors/#{@prof_1.id}"
 
@@ -61,10 +68,6 @@ describe "As a visitor" do
     end
 
     it "I see a list of the names of the students the professors have." do
-      @prof_2.professor_students.create(student: @student_1)
-      @prof_2.professor_students.create(student: @student_2)
-      @prof_2.professor_students.create(student: @student_4)
-      @prof_2.professor_students.create(student: @student_5)
 
       visit "/professors/#{@prof_2.id}"
 
@@ -77,9 +80,6 @@ describe "As a visitor" do
     end
 
     it "I see a list of the names of the students the professors have." do
-      @prof_3.professor_students.create(student: @student_2)
-      @prof_3.professor_students.create(student: @student_3)
-      @prof_3.professor_students.create(student: @student_4)
 
       visit "/professors/#{@prof_3.id}"
 
