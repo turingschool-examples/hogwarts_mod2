@@ -11,6 +11,7 @@ require 'rails_helper'
 describe 'As a vistor' do
   describe "When I visit '/professors/:id" do
     before(:each) do
+      @snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
       @lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
       @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
       @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
@@ -27,8 +28,12 @@ describe 'As a vistor' do
         within("#student-#{student.id}") do
           expect(page).to have_content(student.name)
         end
+    
       end
-      #add edge case for when prof has no students
+    end
+    it 'If prof has no students, there is no prof students section' do
+      visit "/professors/#{@snape.id}"
+      expect(page).to_not have_selector('#student-dtls')
     end
     it 'I see the average age of all students for that professor' do
       visit "/professors/#{@lupin.id}"
