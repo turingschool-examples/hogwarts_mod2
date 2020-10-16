@@ -1,0 +1,8 @@
+<table>
+  <% @students.each do |student| %>
+  <tr id = "<%=student.id%>">
+    <td> <%=student.name%> </td>
+    <td> <%=student.professor_count%> </td>
+  </tr>
+  <% end %>
+</table>

@@ -21,15 +21,15 @@ describe "As a visitor," do
   describe "When I visit '/students'" do
     it "I see a list of students and the number of professors each student has." do
       visit "/students"
-      within("##{@harry.name}") do
+      within("##{@harry.id}") do
         expect(page).to have_content("Harry Potter")
         expect(page).to have_content("3")
       end
-      within("##{@malfoy.name}") do
+      within("##{@malfoy.id}") do
         expect(page).to have_content("Draco Malfoy")
         expect(page).to have_content("2")
       end
-      within("##{@longbottom.name}") do
+      within("##{@longbottom.id}") do
         expect(page).to have_content("Neville Longbottom")
         expect(page).to have_content("1")
       end
