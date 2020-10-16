@@ -10,8 +10,4 @@ class Student <ApplicationRecord
     professors.count
   end
 
-  def self.average_age
-    average(:age).round(1)
-  end
-
 end
