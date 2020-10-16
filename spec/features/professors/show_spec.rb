@@ -46,7 +46,6 @@ describe "as a visitor" do
       visit("/professors/#{@lupin.id}")
 
       expect(page).to have_content("Average Age: 11.5")
-
     end
   end
 end
