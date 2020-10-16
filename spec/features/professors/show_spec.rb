@@ -44,8 +44,8 @@ RSpec.describe "As a visitor" do
       ProfessorStudent.create(student_id: malfoy.id, professor_id: hagarid.id)
 
       visit "/professors/#{hagarid.id}"
-
-      expect(page).to have_content("Average Age: 11.5")
+    save_and_open_page
+      expect(page).to have_content("Average Age of Students: 11.5")
     end
   end
 end
