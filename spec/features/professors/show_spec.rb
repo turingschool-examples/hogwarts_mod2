@@ -65,5 +65,58 @@ RSpec.describe "As a visitor" do
         expect(page).to have_content("Ron")
         expect(page).to have_content("Harry")
     end 
+    it "I see the average age of all students for that professor." do
+      
+        snape = Professor.create!(
+          name: "Severus Snape",
+          age: 44,
+          specialty: "Potions"
+        )
+
+        malfoy = Student.create!(
+          name: "Malfoy",
+          age: 14,
+          house: "Slytherin",
+        )
+
+        ron = Student.create!(
+          name: "Ron",
+          age: 14,
+          house: "Gryffindor",
+        )
+
+        harry = Student.create!(
+          name: "Harry",
+          age: 15,
+          house: "Gryffindor",
+        )
+
+        hermione = Student.create!(
+          name: "Hermione",
+          age: 15,
+          house: "Gryffindor",
+        )
+
+        ProfessorStudent.create!(
+          professor_id: snape.id,
+          student_id: malfoy.id
+        )
+        
+        ProfessorStudent.create!(
+          professor_id: snape.id,
+          student_id: harry.id
+        )
+        
+        ProfessorStudent.create!(
+          professor_id: snape.id,
+          student_id: ron.id
+        )
+
+        visit "/professors/#{snape.id}"
+
+        save_and_open_page
+
+        expect(page).to have_content("Average student age: 14.3")
+    end
   end
 end 
