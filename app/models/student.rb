@@ -11,7 +11,7 @@ class Student <ApplicationRecord
   end
 
   def self.average_age
-    average(:age)
+    average(:age).round(1)
   end
 
 end
