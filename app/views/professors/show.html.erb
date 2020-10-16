@@ -1,5 +1,5 @@
 <div id="professor-students">
-<% @professor.students.order(:name).each do |student| %>
+<% @professor.students.each do |student| %>
   <p><%= student.name %></p>
 <% end %>
 <p>Average student age: <%= @professor.students.average(:age) %></p>
