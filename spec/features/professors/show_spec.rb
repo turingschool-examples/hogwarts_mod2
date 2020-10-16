@@ -38,9 +38,11 @@ describe "As a visitor," do
 
       visit "professors/#{professor_1.id}"
 
-      expect(page).to have_content("Harry Potter")
-      expect(page).to have_content("Draco Malfoy")
-      expect(page).to have_content("Luna Lovegood")
+      within '#professor-student-info' do
+        expect(page.all('p')[0]).to have_content("Draco Malfoy")
+        expect(page.all('p')[1]).to have_content("Harry Potter")
+        expect(page.all('p')[2]).to have_content("Luna Lovegood")
+      end
     end
   end
 end
