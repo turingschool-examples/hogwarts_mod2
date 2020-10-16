@@ -47,8 +47,11 @@ describe "As a visitor" do
 
       expect(page.all('li')[0]).to have_content("#{@chang.name}")
       expect(page.all('li')[1]).to have_content("#{@malfoy.name}")
+      expect(page.all('li')[1]).to have_content("#{@malfoy.professors.length}")
       expect(page.all('li')[2]).to have_content("#{@potter.name}")
+      expect(page.all('li')[2]).to have_content("#{@potter.professors.length}")
       expect(page.all('li')[3]).to have_content("#{@longbottom.name}")
+      expect(page.all('li')[3]).to have_content("#{@longbottom.professors.length}")
     end
   end
 

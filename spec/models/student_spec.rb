@@ -15,15 +15,6 @@ RSpec.describe Student, type: :model do
 
   describe 'instance methods' do
     before :each do
-      @mcgonagall = Professor.create!(
-                    name: "Minerva McGonagall",
-                    age: 204,
-                    specialty: "Transfiguration")
-      @snape = Professor.create!(
-                    name: "Severus Snape",
-                    age: 40,
-                    specialty: "Potions")
-
       @longbottom = Student.create!(
         name: "Neville Longbottom",
         age: 14,
@@ -36,10 +27,6 @@ RSpec.describe Student, type: :model do
         name: "Harry Potter",
         age: 13,
         house: "Gryffindor")
-      ProfessorStudent.create!(professor: @mcgonagall, student: @longbottom)
-      ProfessorStudent.create!(professor: @mcgonagall, student: @potter)
-      ProfessorStudent.create!(professor: @snape, student: @malfoy)
-      ProfessorStudent.create!(professor: @snape, student: @longbottom)
     end
 
     it ".average_age" do

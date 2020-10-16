@@ -15,38 +15,23 @@ RSpec.describe Professor, type: :model do
   describe 'instance methods' do
     before :each do
       @mcgonagall = Professor.create!(
-                    name: "Minerva McGonagall",
-                    age: 204,
-                    specialty: "Transfiguration")
+          name: "Minerva McGonagall",
+          age: 204,
+          specialty: "Transfiguration")
       @snape = Professor.create!(
-                    name: "Severus Snape",
-                    age: 40,
-                    specialty: "Potions")
+          name: "Severus Snape",
+          age: 40,
+          specialty: "Potions")
       @hagrid = Professor.create!(
-                    name: "Rubeus Hagrid",
-                    age: 46,
-                    specialty: "Care of Magical Creatures")
-
-      @longbottom = Student.create!(
-        name: "Neville Longbottom",
-        age: 14,
-        house: "Gryffindor")
-      @malfoy = Student.create!(
-        name: "Draco Malfoy",
-        age: 12,
-        house: "Slytherin")
-      @potter = Student.create!(
-        name: "Harry Potter",
-        age: 13,
-        house: "Gryffindor")
-      ProfessorStudent.create!(professor: @mcgonagall, student: @longbottom)
-      ProfessorStudent.create!(professor: @mcgonagall, student: @potter)
-      ProfessorStudent.create!(professor: @snape, student: @malfoy)
-      ProfessorStudent.create!(professor: @snape, student: @longbottom)
+          name: "Rubeus Hagrid",
+          age: 46,
+          specialty: "Care of Magical Creatures")
     end
 
     it ".sort_alpha" do
       expect(Professor.all.sort_alpha.pluck(:name)).to eq(["#{@mcgonagall.name}", "#{@hagrid.name}", "#{@snape.name}"])
+
+      expect(Professor.all.sort_alpha.pluck(:name)).to_not eq(["#{@snape.name}", "#{@hagrid.name}", "#{@mcgonagall.name}"])
     end
   end
 end
