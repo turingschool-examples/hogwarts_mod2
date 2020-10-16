@@ -72,7 +72,7 @@ RSpec.describe "As a visitor" do
 
         visit "/students"
 
-        save_and_open_page
+        # save_and_open_page
 
         expect(page).to have_content("Malfoy: 1")
         expect(page).to have_content("Ron: 2")
