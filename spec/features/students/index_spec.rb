@@ -21,9 +21,9 @@ describe "As a visitor" do
 
       visit "/students"
 
-      expect(page).to have_content("#{harry.name}: 3")
-      expect(page).to have_content("#{malfoy.name}: 2")
-      expect(page).to have_content("#{longbottom.name}: 1")
+      expect(page).to have_content("#{harry.name}: #{harry.professors.count}")
+      expect(page).to have_content("#{malfoy.name}: #{malfoy.professors.count}")
+      expect(page).to have_content("#{longbottom.name}: #{longbottom.professors.count}")
     end
   end
 end
