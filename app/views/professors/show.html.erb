@@ -2,6 +2,7 @@
 <%= content_tag :h3, "Students:" %>
 <%= content_tag :h4, "Stats:" %>
 <%= content_tag :p, "Average Age: #{@professor.students.average(:age)}", id: "student-stats-#{@professor.id}" %>
+<%= content_tag :h4, "Names:" %>
 <% @students.each do |student| %>
   <div class='student' id='student-<%= student.id %>'>
     <%= content_tag :p, student.name %>
