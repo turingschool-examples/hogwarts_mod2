@@ -1,4 +1,4 @@
-<div class="professor-students">
+<div id="professor-students">
 <% @professor.students.order(:name).each do |student| %>
   <p><%= student.name %></p>
 <% end %>

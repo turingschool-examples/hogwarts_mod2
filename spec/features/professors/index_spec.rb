@@ -27,7 +27,7 @@ describe "As A Visitor" do
     it "shows professors alphabetically by name" do
       visit '/professors'
       
-      within '.professor-index' do
+      within '#professor-index' do
         expect(page.all('p')[0]).to have_content(@professor2.name)
         expect(page.all('p')[1]).to have_content(@professor1.name)
       end

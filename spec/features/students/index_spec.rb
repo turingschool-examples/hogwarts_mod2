@@ -31,7 +31,7 @@ describe 'As a visitor' do
     it "lists students alphabetically by name" do
       visit '/students'
 
-      within('.students-index') do
+      within('#students-index') do
         expect(page.all('p')[0]).to have_content(@student2.name)
         expect(page.all('p')[1]).to have_content(@student1.name)
       end
