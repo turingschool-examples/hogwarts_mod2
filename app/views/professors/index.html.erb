@@ -1,5 +1,7 @@
 <h1>Professors</h1>
 
-<% @professors.each do |professor| %>
+<% sorted_professors = @professors.sort_by { |professor| professor.name} %>
+
+<% sorted_professors.each do |professor| %>
   <p><%= "Name: #{professor.name}, Age: #{professor.age}, Specialty: #{professor.specialty}" %>
 <% end %>
