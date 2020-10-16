@@ -1,0 +1,7 @@
+<%= content_tag h1: "Students:" %>
+
+<%= @students.each do |student| %>
+  <div class="student" id='student-<%= student.id %>'>
+    <%= content_tag :p, "#{student.name}: #{student.professors.count}" %>
+  </div>
+<% end %>
