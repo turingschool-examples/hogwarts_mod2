@@ -3,6 +3,6 @@
 <section>
   <h3>Students and Number of Professors</h3>
   <% @students.each do |student| %>
-    <p><%= student.name%>: <%= student.professors.length %></p>
+    <p><%= student.name%>: <%= student.num_professors %></p>
   <% end %>
 </section>

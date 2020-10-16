@@ -20,9 +20,9 @@ RSpec.describe 'As a visitor' do
 
       visit '/students'
 
-      expect(page).to have_content('Harry Potter: 3')
-      expect(page).to have_content('Draco Malfoy: 2')
-      expect(page).to have_content('Neville Longbottom: 1')
+      expect(page).to have_content("#{harry.name}: #{harry.num_professors}")
+      expect(page).to have_content("#{malfoy.name}: #{malfoy.num_professors}")
+      expect(page).to have_content("#{longbottom.name}: #{longbottom.num_professors}")
     end
   end
 end
