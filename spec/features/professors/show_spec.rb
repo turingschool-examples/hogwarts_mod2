@@ -114,7 +114,7 @@ RSpec.describe "As a visitor" do
 
         visit "/professors/#{snape.id}"
 
-        save_and_open_page
+        # save_and_open_page
 
         expect(page).to have_content("Average student age: 14.3")
     end

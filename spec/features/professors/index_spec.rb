@@ -21,6 +21,8 @@ RSpec.describe "As a visitor" do
 
         visit '/professors'
 
+        # save_and_open_page
+
         expect(page).to have_content("Severus Snape")  
         expect(page).to have_content("44")  
         expect(page).to have_content("Potions")  
