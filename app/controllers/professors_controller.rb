@@ -5,5 +5,6 @@ class ProfessorsController < ApplicationController
   end
 
   def show
-  end 
+    @professor = Professor.find(params[:id])
+  end
 end
