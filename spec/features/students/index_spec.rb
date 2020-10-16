@@ -13,7 +13,7 @@ describe 'As a visitor' do
 
       expect(page).to have_content(@longbottom.name)
       expect(page).to have_content(@longbottom.age)
-      expect(page).to have_content(@longbottom.specialty)
+      expect(page).to have_content(@longbottom.house)
       expect(page).to have_content(@harry.name)
       expect(page).to have_content(@malfoy.age)
     end
