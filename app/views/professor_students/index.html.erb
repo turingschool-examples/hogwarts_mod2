@@ -1,5 +1,5 @@
 <h1>Students for Teacher</h1>
 
-<% @student_ids.each do |student_id| %>
-  <p><%= Student.where("id = #{student_id}").pluck(:name).first %></p>
-<% end %>
+<p>Average Age: </p>
+
+<%= ProfessorStudent.students(params[:professor_id]) %>
