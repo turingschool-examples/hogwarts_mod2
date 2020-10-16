@@ -21,5 +21,11 @@ describe 'As a visitor' do
       expect(page).to have_content(@student1.name)
       expect(page).to have_content(@student2.name)
     end
+
+    it 'I should see the average age of that professors students' do
+      visit "/professors/#{@professor1.id}"
+
+      expect(page).to have_content("Average student age: 11.5")
+    end
   end
 end
