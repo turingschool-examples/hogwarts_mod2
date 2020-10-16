@@ -1,0 +1,8 @@
+<h1>Hogwarts Professors</h1>
+
+<% @professors.each do |professor| %>
+<h3><%= professor.name %></h3>
+<%= professor.age %>
+<%= professor.specialty %>
+<%= professor.id %>
+<% end %>
