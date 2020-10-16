@@ -31,7 +31,7 @@ RSpec.describe "As a visitor" do
       malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
       longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
       
-      visit "/professors"
+      visit "/students"
       expect(page).to have_content(malfoy.name)
       expect(page).to have_content(harry.name)
       expect(page).to have_content(longbottom.name)
