@@ -4,4 +4,12 @@ class Professor <ApplicationRecord
                         :specialty
   has_many :professor_students
   has_many :students, through: :professor_students
+
+  def average_student_age
+    students.average(:age)
+  end
+
+  def self.sort_by_name
+    order(:name)
+  end
 end
