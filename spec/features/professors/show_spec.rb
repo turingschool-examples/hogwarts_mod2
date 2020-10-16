@@ -41,7 +41,7 @@ describe 'As a visitor' do
       @diggory = Student.create!(
               name: 'Cedric Diggory',
               age: 16,
-              house: 'Ravenclaw'
+              house: 'Hufflepuff'
             )
 
       ProfessorStudent.create!(student: @black, professor: @mcgonagall)
