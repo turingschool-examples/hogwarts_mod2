@@ -1,17 +1,3 @@
-# User Story 2 of 4
-# As a visitor,
-# When I visit '/professors/:id'
-# I see a list of the names of the students the professors have.
-# (e.g. "Neville Longbottom"
-#      "Hermione Granger"
-#      "Luna Lovegood")
-
-# User Story 4 of 4
-# As a visitor,
-# When I visit '/professors/:id'
-# I see the average age of all students for that professor.
-# (e.g. "Average Age: 14.5")
-
 require 'rails_helper'
 
 RSpec.describe "As a visitor" do
@@ -44,7 +30,7 @@ RSpec.describe "As a visitor" do
       ProfessorStudent.create(student_id: malfoy.id, professor_id: hagarid.id)
 
       visit "/professors/#{hagarid.id}"
-    save_and_open_page
+
       expect(page).to have_content("Average Age of Students: 11.5")
     end
   end

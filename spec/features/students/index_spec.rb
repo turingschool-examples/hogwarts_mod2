@@ -1,10 +1,3 @@
-# User Story 3 of 4
-# As a visitor,
-# When I visit '/students'
-# I see a list of students and the number of professors each student has.
-# (e.g. "Draco Malfoy: 5"
-#      "Nymphadora Tonks: 10")
-
 require 'rails_helper'
 
 RSpec.describe "As a visitor" do
