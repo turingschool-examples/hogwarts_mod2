@@ -3,3 +3,6 @@
 <% @professor.students.each do |student| %>
   <p><%= student.name %></p>
 <% end %>
+
+<% total_age = @professor.students.sum { |student| student.age }%>
+<%= "Average Age: #{(total_age.to_f / @professor.students.length).round(1)}" %>
