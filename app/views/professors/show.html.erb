@@ -2,7 +2,7 @@
 
 <section class="students">
   <h3>Students</h3>
-  <p>Average Age: <%= Student.average_age %></p>
+  <p>Average Age: <%= @professor.student_average_age %></p>
   <ul>
   <% @students.each do |student| %>
     <div class="student" id="student-<%= student.id %>">

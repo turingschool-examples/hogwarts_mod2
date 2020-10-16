@@ -9,5 +9,5 @@ class Student <ApplicationRecord
   def professor_count
     professors.count
   end
-
+  
 end
