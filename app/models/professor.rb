@@ -13,4 +13,9 @@ class Professor <ApplicationRecord
       Student.where(id: id)
     end  
   end
+
+  def average_student_age
+    
+require 'pry'; binding.pry
+  end
 end
