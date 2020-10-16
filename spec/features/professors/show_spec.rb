@@ -9,26 +9,24 @@ require 'rails_helper'
 describe "As a visitor," do
   describe "When I visit '/professors/:id'" do
     it "I see a list of the names of the students the professors have" do
-      professor_1 = Professor.create(
-                                      name: 'Severus Snape',
+      @professor_1 = Professor.create!(name: 'Severus Snape',
                                       age: 202,
-                                      specialty: "Potions"
-                                    )
+                                      specialty: "Potions")
 
-      student_1 = Student.create(
-                                      name: 'Neville Longbottom',
-                                      age: 14,
-                                      house: "Grifyndor"
-                                    )
-      student_2 = Student.create(
-                                      name: 'Lune Lovegood',
-                                      age: 14,
-                                      specialty: "Hufflepuff"
-                                    )
-      visit '/professors//id'
+      @student_1 = Student.create!(name: 'Neville Longbottom',
+                                  age: 14,
+                                  house: "Hufflepuff")
+      @student_2 = Student.create!(name: 'Luna Lovegood',
+                                  age: 14,
+                                  house: "Hufflepuff")
 
-      expect(page).to have_content(student_1.name)
-      expect(page).to have_content(student_2.name)
+      ProfessorStudent.create!(professor: @professor_1, student: @student_1)
+      ProfessorStudent.create!(professor: @professor_1, student: @student_2)
+
+      visit "/professors/#{@professor_1.id}"
+
+      expect(page).to have_content(@professor_1.name)
+      expect(page).to have_content(@student_1.name)
     end
   end
 end
