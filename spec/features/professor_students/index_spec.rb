@@ -23,11 +23,11 @@ describe "As a visitor" do
 
       @student_1 = Student.create!({
         name: "Neville Longbottom",
-        age: 18,
+        age: 14,
         house: "Gryffindor"})
       @student_2 = Student.create!({
         name: "Hermione Granger",
-        age: 19,
+        age: 16,
         house: "Gryffindor"})
       @student_3 = Student.create!({
         name: "Luna Lovegood",
@@ -35,11 +35,11 @@ describe "As a visitor" do
         house: "Ravenclaw"})
       @student_4 = Student.create!({
         name: "Harry Potter",
-        age: 19,
+        age: 16,
         house: "Gryffindor"})
       @student_5 = Student.create!({
         name: "Ron Weasley",
-        age: 18,
+        age: 17,
         house: "Gryffindor"})
 
       @prof_1.professor_students.create(student: @student_1)
@@ -88,6 +88,12 @@ describe "As a visitor" do
       expect(page).to have_content("#{@student_2.name}")
       expect(page).to have_content("#{@student_3.name}")
       expect(page).to have_content("#{@student_4.name}")
+    end
+
+    it "I see the averageage of all students for that professor" do
+      visit "/professors/#{@prof_1.id}"
+
+      expect(page).to have_content("Average age: 16.2")
     end
   end
 end
