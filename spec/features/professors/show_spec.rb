@@ -19,7 +19,6 @@ describe "As a visitor" do
       ProfessorStudent.create(student_id: @longbottom.id, professor_id: @snape.id)
     end
     it "I see a list of of the name of students the professors have" do
-      binding.pry
       visit "/professors/#{@snape.id}"
 
       expect(page).to have_content(@harry.name)
