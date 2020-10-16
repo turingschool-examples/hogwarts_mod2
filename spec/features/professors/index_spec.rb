@@ -42,8 +42,8 @@ describe 'as a visitor' do
                                     specialty: "Potions"})
 
       visit '/professors'
-      save_and_open_page
-      within '.student-names' do
+
+      within '.professor-names' do
         expect(page.all('li')[0]).to have_content(albus.name)
         expect(page.all('li')[1]).to have_content(minerva.name)
         expect(page.all('li')[2]).to have_content(snape.name)

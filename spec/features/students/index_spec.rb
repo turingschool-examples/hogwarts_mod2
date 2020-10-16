@@ -44,3 +44,10 @@ describe 'as a visitor' do
     end
   end
 end
+
+describe 'as a visitor' do
+  describe 'when I visit the students index page' do
+    it 'the content is displayed in alphabetical order' do
+    end
+  end
+end 
