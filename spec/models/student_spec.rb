@@ -42,8 +42,12 @@ RSpec.describe Student, type: :model do
       ProfessorStudent.create!(professor: @snape, student: @longbottom)
     end
 
-    it "Can calculate average age of all students" do
+    it ".average_age" do
       expect(Student.all.average_age).to eq(13)
+    end
+
+    it ".sort_alpha" do
+      expect(Student.all.sort_alpha.pluck(:name)).to eq(["#{@malfoy.name}", "#{@potter.name}", "#{@longbottom.name}"])
     end
   end
 end
