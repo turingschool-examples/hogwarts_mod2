@@ -27,3 +27,27 @@ describe 'as a visitor' do
     end
   end
 end
+
+describe 'as a visitor' do
+  describe 'when I visit the professors index page' do
+    it 'has all the information sorted alphabetically' do
+      minerva = Professor.create!({ name: "Minerva McGonagall",
+                                    age: 204,
+                                    specialty: "Transfiguration"})
+      albus   = Professor.create!({ name: "Albus Dumbledore",
+                                    age: 115,
+                                    specialty: "Occlumency"})
+      snape   = Professor.create!({ name: "Severus Snape",
+                                    age: 38,
+                                    specialty: "Potions"})
+
+      visit '/professors'
+
+      within '.student-names' do
+        expect(page.all('li')[0]).to have_content(albus.name)
+        expect(page.all('li')[1]).to have_content(minerva.name)
+        expect(page.all('li')[2]).to have_content(snape.name)
+      end
+    end
+  end
+end
