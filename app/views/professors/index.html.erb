@@ -1,0 +1,9 @@
+<h1>Welcome to the Hogwarts Intructors page</h1>
+
+<% @professors.each do |professor| %>
+<section id="professor-<%= professor.id %>">
+  <p>Professor Name: <%= professor.name %></p>
+  <p>Professor Age: <%= professor.age %></p>
+  <p>Professor Specialty: <%= professor.specialty %></p>
+</section>
+<% end %>
