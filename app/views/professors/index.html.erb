@@ -1,5 +1,7 @@
-<% @professors.each do |professor| %>
-  <p>Name: <%= professor.name %></p>
-  <p>Age: <%= professor.age %></p>
-  <p>Specialty: <%= professor.specialty %></p>
+<% @professors.sort_alpha.each do |professor| %>
+  <ul>
+    <li>Name: <%= professor.name %></li>
+    <p>Age: <%= professor.age %></p>
+    <p>Specialty: <%= professor.specialty %></p>
+  </ul>
 <% end %>

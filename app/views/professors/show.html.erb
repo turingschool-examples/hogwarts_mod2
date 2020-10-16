@@ -1,5 +1,9 @@
-<% @professor.students.each do |student| %>
-  <p> <%= student.name %></p>
+<% @professor.students.sort_alpha.each do |student| %>
+  <section>
+    <ul>
+      <li> <%= student.name %></li>
+    </ul>
+  </section>
 <% end %>
 
 <p>Average Age: <%= @professor.students.average_age %></p>
