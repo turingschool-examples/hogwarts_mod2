@@ -23,6 +23,7 @@ describe "As a visitor" do
         specialty: "Seer"
         })
 
+      expect(page).to have_content("Hogwarts Staff")
       expect(page).to have_content("#{prof_1.name}")
       expect(page).to have_content("Age: #{prof_1.age}")
       expect(page).to have_content("Specialty: #{prof_1.specialty}")
