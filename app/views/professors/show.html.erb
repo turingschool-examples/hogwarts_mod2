@@ -8,5 +8,7 @@
   <% end %>
 </section>
 
-<% total_age = @professor.students.sum { |student| student.age }%>
-<%= "Average Age: #{(total_age.to_f / @professor.students.length).round(1)}" %>
+<section id='average-age'>
+  <% total_age = @professor.students.sum { |student| student.age }%>
+  <p><%= "Average Age: #{(total_age.to_f / @professor.students.length).round(1)}" %></p>
+</section>
