@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "As a visitor," do
   describe "When I visit '/professors'," do
-    it "I see a list of professors with name, age and specialty" do
+    it "I see a list of professors in alphabetical order with name, age and specialty" do
       professor_1 = Professor.create(
         name: "Minerva McGonagall",
         age: 204,
@@ -21,9 +21,9 @@ describe "As a visitor," do
 
       visit '/professors'
 
-      expect(page).to have_content("Name: Minerva McGonagall, Age: 204, Specialty: Transfiguration")
-      expect(page).to have_content("Name: Severus Snape, Age: 42, Specialty: Potions")
-      expect(page).to have_content("Name: Rubeus Hagrid, Age: 51, Specialty: Care of Magical Creatures")
+      expect(page.all('p')[0]).to have_content("Name: Minerva McGonagall, Age: 204, Specialty: Transfiguration")
+      expect(page.all('p')[1]).to have_content("Name: Rubeus Hagrid, Age: 51, Specialty: Care of Magical Creatures")
+      expect(page.all('p')[2]).to have_content("Name: Severus Snape, Age: 42, Specialty: Potions")
     end
   end
 end
