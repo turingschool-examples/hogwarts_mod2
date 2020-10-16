@@ -1,0 +1,10 @@
+<h2>Professors at Hogwarts School of Witchcraft and Wizzardry</h2>
+<section class="professors">
+  <% @professors.each do |professor| %>
+    <div class="professor" id="professor-<%= professor.id %>">
+      <h3><%= professor.name %></h3>
+      <p>Age: <%= professor.age %></p>
+      <p>Specialty: <%= professor.specialty %></p>
+    </div>
+  <% end %>
+</section>
