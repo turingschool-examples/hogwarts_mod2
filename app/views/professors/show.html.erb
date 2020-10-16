@@ -3,12 +3,12 @@
 
 <% if @professor.students.size != 0 %>
   <section id='student-dtls'>
-  <h2>Student Names:</h2>
-  <% @professor.students.each do |student|%>
-    <p id="student-<%= student.id %>">
-    <%= student.name%><br>
-    </p>
-    <br>
-  <% end%>
+    <h2>Student Names:</h2>
+    <% @professor.students.each do |student|%>
+      <p id="student-<%= student.id %>">
+      <%= student.name%><br>
+      </p>
+      <br>
+    <% end%>
   </section>
 <% end%>
