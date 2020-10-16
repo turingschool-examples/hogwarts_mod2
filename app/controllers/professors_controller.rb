@@ -1,2 +1,5 @@
 class ProfessorsController < ApplicationController
-end 
+
+  def index
+  end 
+end
