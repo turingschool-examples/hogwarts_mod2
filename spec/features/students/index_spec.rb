@@ -23,8 +23,8 @@ describe 'As a visitor' do
       visit '/students'
 
       expect(page).to have_content("#{@longbottom.name}: 1")
-      expect(page).to have_content("#{@harry.name}: 2")
-      expect(page).to have_content("#{@malfoy.name}: 3")
+      expect(page).to have_content("#{@harry.name}: 3")
+      expect(page).to have_content("#{@malfoy.name}: 2")
     end
 
     it "I see the list in alphabetical order" do
