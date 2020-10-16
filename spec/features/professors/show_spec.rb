@@ -10,9 +10,11 @@ describe 'As a visitor' do
       ProfessorStudent.create(professor_id: professor.id, student_id: student_2.id)
 
       visit "/professors/#{professor.id}"
-
+      
       expect(page).to have_content(student_1.name)
       expect(page).to have_content(student_2.name)
+
+      expect(page).to have_content("#{(student_1.age + student_2.age)/ professor.students.count}")
     end
   end
 end
