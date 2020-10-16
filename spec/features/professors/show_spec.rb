@@ -62,7 +62,7 @@ describe "As a visitor," do
         student_id: student_3.id
       )
 
-      visit "/professor/#{professor_2.id}"
+      visit "/professors/#{professor_2.id}"
 
       expect(page).to have_content(professor_2.name)
       expect(page).to have_content(student_1.name)
