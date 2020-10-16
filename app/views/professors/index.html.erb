@@ -1,0 +1,11 @@
+<h1 style ="text-align:center"> All the Professors! </h1>
+<ul>
+<% @professors.each do |professor| %>
+
+<h3 style="text-weight:bold"> <%= professor.name %> </h3>
+<h3 style= "text-weight: bold"> Age: </h3>
+<p> <%= professor.age %>
+<h3 style= "text-weight: bold"> Specialty: </h3>
+<p> <%= professor.specialty %>
+</ul>
+<% end %>
