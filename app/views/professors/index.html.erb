@@ -1,5 +1,5 @@
 <ul>
   <% @professors.alpha.each do |prof| %>
-  <li><%= prof.name %> | Age: <%= prof.age %> | Specialty: <%= prof.specialty %></li>
+  <li><%= link_to prof.name, prof_show_path(prof) %> | Age: <%= prof.age %> | Specialty: <%= prof.specialty %></li>
   <% end %>
 </ul>
