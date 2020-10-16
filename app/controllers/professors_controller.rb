@@ -5,6 +5,7 @@ class ProfessorsController < ApplicationController
   end
 
   def show
+    @professor = Professor.find(params[:professor_id])
     @students = Professor.find(params[:professor_id]).students.order(:name)
   end
 

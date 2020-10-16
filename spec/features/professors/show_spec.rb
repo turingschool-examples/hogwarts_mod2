@@ -15,6 +15,8 @@ RSpec.describe "As a visitor" do
 
       visit "/professors/#{snape.id}"
 
+      expect(page).to have_content(snape.name)
+
       within ".students" do
         expect(page.all('li')[0]).to have_content(malfoy.name)
         expect(page.all('li')[1]).to have_content(harry.name)
