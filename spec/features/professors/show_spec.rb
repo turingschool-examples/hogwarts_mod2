@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 describe "As a visitor" do
+  describe 'When I visit a professors show page' do
   before :each do
     @mcgonagall = Professor.create!(
                   name: "Minerva McGonagall",
@@ -29,7 +30,6 @@ describe "As a visitor" do
     ProfessorStudent.create!(professor: @snape, student: @longbottom)
   end
 
-  describe 'When I visit a professors show page' do
     it "Shows a list of students the professor has" do
       visit "/professors/#{@mcgonagall.id}"
 
@@ -37,6 +37,11 @@ describe "As a visitor" do
       expect(page).to have_content("#{@potter.name}")
       expect(page).to_not have_content("#{@malfoy.name}")
     end
-  end
+    it "Shows the average age of all students for that prof" do
+      visit "/professors/#{@snape.id}"
 
+      expect(page).to have_content("Average Age: #{@snape.students.average_age}")
+    end
+
+  end
 end
