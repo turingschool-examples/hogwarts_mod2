@@ -6,4 +6,11 @@ class Professor <ApplicationRecord
   validates_presence_of :age
   validates_presence_of :specialty
 
+  def avg_student_age
+    if self.students.size == 0
+      'No students currently'
+    else
+      self.students.average(:age).round(1)
+    end
+  end
 end
