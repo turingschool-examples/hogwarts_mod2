@@ -30,7 +30,7 @@ describe 'As a visitor' do
 
       visit "/professors/#{@lupin.id}"
 
-      expect(page).to have_content(@harry.age.to_s)
+      expect(page).to have_content(((@harry.age + @malfoy.age) / 2).to_s)
     end
   end
 end
