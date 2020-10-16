@@ -1,10 +1,4 @@
-# User Story 1 of 4
-# As a visitor,
-# When I visit '/professors',
-# I see a list of professors with the following information:
-# -Name
-# -Age
-# -Specialty
+require 'rails_helper'
 
 describe "As a visitor" do
   describe "when I visit '/professors'" do
