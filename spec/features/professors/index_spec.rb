@@ -37,6 +37,7 @@ describe 'As a visitor' do
       expect(page).to have_content(@snape.specialty)
       expect(page).to have_content(@flitwick.specialty)
       expect(page).to have_content(@sprout.specialty)
+      save_and_open_page
     end
   end
 end
