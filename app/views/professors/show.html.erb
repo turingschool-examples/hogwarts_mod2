@@ -1,8 +1,12 @@
 <h1><%= @professor.name %></h1>
 
-<% @professor.students.each do |student| %>
-  <p><%= student.name %></p>
-<% end %>
+<section id='professor-student-info'>
+  <% sorted_students = @professor.students.sort_by { |student| student.name } %>
+
+  <% sorted_students.each do |student| %>
+    <p><%= student.name %></p>
+  <% end %>
+</section>
 
 <% total_age = @professor.students.sum { |student| student.age }%>
 <%= "Average Age: #{(total_age.to_f / @professor.students.length).round(1)}" %>
