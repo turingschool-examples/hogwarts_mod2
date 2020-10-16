@@ -11,11 +11,11 @@ describe "As a visitor," do
                                  house: "Griffen"
                                  })
     @professor.students.create!({name: "Hermione Granger",
-                                 age: 12,
+                                 age: 13,
                                  house: "Griffen"
                                  })
     @professor.students.create!({name: "Luna Lovegood",
-                                 age: 13,
+                                 age: 16,
                                  house: "Griffen"
                                  })
   end
@@ -25,6 +25,13 @@ describe "As a visitor," do
       expect(page).to have_content("Neville Longbottom")
       expect(page).to have_content("Hermione Granger")
       expect(page).to have_content("Luna Lovegood")
+    end
+  end
+  #User Story 4 of 4
+
+  describe "When I visit '/professors/:id'" do
+    it "I see the average age of all students for that professor." do
+      expect(page).to have_content(14)
     end
   end
 end
