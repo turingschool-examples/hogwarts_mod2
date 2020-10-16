@@ -117,7 +117,7 @@ describe "As a visitor" do
 
       visit "/professors/#{professor_1.id}"
 
-      expect(page).to have_content("Average age of #{professor_1.name}'s students: 20.3'")
+      expect(page).to have_content("Average age of #{professor_1.name}'s students: 20.3")
       expect(page).to have_no_content(professor_2.name)
     end
   end

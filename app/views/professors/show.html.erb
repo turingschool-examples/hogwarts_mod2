@@ -1,5 +1,14 @@
-<h1><%= @professor.name %>'s Students'</h1>
+<h1>Professor <%= @professor.name %></h1>
 
+<h3><%= "#{@professor.name}'s students" %></h3>
 <% @professor.professor_students.each do |prof_stdnt| %>
   <p><%= Student.find(prof_stdnt.student_id).name %></p>
 <% end %>
+
+<% total_age = @professor.professor_students.sum do |prof_stdnt| %>
+  <% Student.find(prof_stdnt.student_id).age %>
+<% end %>
+
+<% stdnt_avg_age = (total_age.to_f / @professor.professor_students.count).round(1) %>
+
+<p><%= "Average age of #{@professor.name}'s students: #{stdnt_avg_age}" %></p>
