@@ -28,6 +28,13 @@ describe 'As a vistor' do
           expect(page).to have_content(student.name)
         end
       end
+      #add edge case for when prof has no students
+    end
+    it 'I see the average age of all students for that professor' do
+      visit "/professors/#{@lupin.id}"
+      within('#students') do
+        expect(page).to have_content(@lupin.avg_student_age)
+      end
     end
   end
 end
