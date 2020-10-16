@@ -1,5 +1,8 @@
-<h1>"Professors Index"</h1>
+<h1>Professors Index</h1>
 <br>
 <% @professors.each do |professor| %>
-  <p><%= "Name: #{professor.name}, Age: #{professor.age}, Specialty: #{professor.specialty}" %></p>
+  <p><%= "Name: #{professor.name}" %></p>
+  <p><%= "Age: #{professor.age}" %></p>
+  <p><%= "Specialty: #{professor.specialty}" %></p>
+  <p><%= link_to "#{professor.name}'s Students", "/professors/#{professor.id}" %><br><br>
 <% end %>
