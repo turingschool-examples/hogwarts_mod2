@@ -1,6 +1,8 @@
 <h1> Hogwarts  Professors</h1>
+<ul class=student-names>
 <% @professors.each do |professor| %>
-  <h3>Name: <%= professor.name %></h3>
+  <li><h3>Name: <%= professor.name %></h3>
   <p>Age: <%= professor.age %></p>
-  <p>Specialty: <%= professor.specialty %></p>
+  <p>Specialty: <%= professor.specialty %></p></li>
 <% end %>
+</ul>
