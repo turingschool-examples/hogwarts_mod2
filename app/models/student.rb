@@ -5,4 +5,12 @@ class Student <ApplicationRecord
   validates_presence_of :name
   validates_presence_of :age
   validates_presence_of :house
+
+  def professors
+    professor_ids = ProfessorStudent.where(student_id: self.id).pluck(:professor_id)     
+
+    professor_ids.flat_map do |id|
+      Professor.where(id: id)
+    end
+  end
 end
