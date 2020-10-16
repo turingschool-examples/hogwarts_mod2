@@ -24,7 +24,7 @@ describe 'As a vistor' do
     it 'I see a list of the professors students' do
       visit "/professors/#{@lupin.id}"
       @lupin.students.each do |student|
-        within("student-#{student.id}") do
+        within("#student-#{student.id}") do
           expect(page).to have_content(student.name)
         end
       end

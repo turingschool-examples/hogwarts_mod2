@@ -1,1 +1,9 @@
 <h1>Professor <%= @professor.name %>'s Page</h1>
+
+<h2>Student Names:</h2>
+<% @professor.students.each do |student|%>
+  <p id="student-<%= student.id %>">
+  <%= student.name%><br>
+  </p>
+  <br>
+<% end%>
