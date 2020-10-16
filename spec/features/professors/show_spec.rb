@@ -1,12 +1,5 @@
 require 'rails_helper'
 
-# As a visitor,
-# When I visit '/professors/:id'
-# I see a list of the names of the students the professors have.
-# (e.g. "Neville Longbottom"
-#      "Hermione Granger"
-#      "Luna Lovegood")
-
 describe "as a visitor" do
   describe "when I visit /professors/:id" do
     before :each do
@@ -18,12 +11,12 @@ describe "as a visitor" do
       @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
       @longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
 
-      ProfessorStudent.create(student_id: harry.id, professor_id: snape.id)
-      ProfessorStudent.create(student_id: harry.id, professor_id: hagarid.id)
-      ProfessorStudent.create(student_id: harry.id, professor_id: lupin.id)
-      ProfessorStudent.create(student_id: malfoy.id, professor_id: hagarid.id)
-      ProfessorStudent.create(student_id: malfoy.id, professor_id: lupin.id)
-      ProfessorStudent.create(student_id: longbottom.id, professor_id: snape.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: @snape.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: @hagarid.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: @lupin.id)
+      ProfessorStudent.create(student_id: @malfoy.id, professor_id: @hagarid.id)
+      ProfessorStudent.create(student_id: @malfoy.id, professor_id: @lupin.id)
+      ProfessorStudent.create(student_id: @longbottom.id, professor_id: @snape.id)
     end
     it "then I see a list of the names of the students the professors have" do
       visit("/professors/#{@snape.id}")
