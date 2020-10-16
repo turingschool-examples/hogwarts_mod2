@@ -17,7 +17,7 @@ RSpec.describe Professor, type: :model do
     let!(:professor2) { create(:professor, name: 'Taylor Phillips') } 
 
     let!(:student1) { create(:student) } 
-    let!(:student2) { create(:student, name: "Ron Weasley") } 
+    let!(:student2) { create(:student, name: "Ron Weasley", age: 14) } 
     let!(:student3) { create(:student, name: "Luna Lovegood") } 
 
     let!(:professor_student1) { create(:professor_student, professor_id: professor1.id, student_id: student1.id) } 
@@ -26,6 +26,10 @@ RSpec.describe Professor, type: :model do
 
     it '.students' do
       expect(professor1.students).to eq([student1, student2])
+    end
+
+    it '.average_student_age' do
+      expect(professor1.average_student_age).to eq(13)
     end
   end
 end
