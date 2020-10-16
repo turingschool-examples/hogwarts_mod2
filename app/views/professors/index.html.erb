@@ -1,9 +1,11 @@
 <h1>Hogwarts Staff</h1>
 
-<% @professors.each do |professor| %>
-  <h3><%= professor.name %></h3>
-  <p>
-    Age: <%= professor.age %><br>
-    Specialty: <%= professor.specialty %>
-  </p><br>
-<% end %>
+<div id="order">
+  <% @professors.each do |professor| %>
+    <h3><%= professor.name %></h3>
+    <p>
+      Age: <%= professor.age %><br>
+      Specialty: <%= professor.specialty %>
+    </p><br>
+  <% end %>
+</div>
