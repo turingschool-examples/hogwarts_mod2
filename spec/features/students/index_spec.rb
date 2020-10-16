@@ -64,9 +64,9 @@ describe "As a visitor," do
 
       visit "/students"
 
-      expect(page).to have_content(student_1.name": 3")
-      expect(page).to have_content(student_2.name": 2")
-      expect(page).to have_content(student_3.name": 2")
+      expect(page).to have_content("#{student_1.name}: 3")
+      expect(page).to have_content("#{student_2.name}: 2")
+      expect(page).to have_content("#{student_3.name}: 2")
     end
   end
 end
