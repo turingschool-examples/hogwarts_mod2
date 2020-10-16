@@ -7,7 +7,7 @@ RSpec.describe 'professors index page', type: :feature do
     lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
 
     visit "/professors"
-
+  
     within("#professor-#{snape.id}") do
       expect(page).to have_content(snape.name)
       expect(page).to have_content(snape.age)
