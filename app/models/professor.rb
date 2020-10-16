@@ -7,8 +7,7 @@ class Professor <ApplicationRecord
   validates_presence_of :specialty
 
   def average_student_age
-    # binding.pry
-    Student.average(:age)
+    students.average(:age)
   end
 
 end
