@@ -31,7 +31,10 @@ describe "As a visitor," do
 
   describe "When I visit '/professors/:id'" do
     it "I see the average age of all students for that professor." do
-      expect(page).to have_content(14)
+      visit "/professors/#{@professor.id}"
+      within("#avg") do
+        expect(page).to have_content("14")
+      end
     end
   end
 end
