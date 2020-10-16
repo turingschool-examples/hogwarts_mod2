@@ -9,7 +9,9 @@ describe "As a visitor" do
 
       visit("/professors")
 
-      expect(page).to have_content("Name: #{snape.name}, Age: #{snape.age}, Specialty: #{snape.specialty}")
+      expect(page).to have_content("Professors Index")
+      expect(page).to have_link("#{snape.name}'s Students")
+      expect(page).to have_content("Name: #{snape.name}")
       expect(page).to have_content("Age: #{hagarid.age}")
       expect(page).to have_content("Specialty: #{lupin.specialty}")
     end
