@@ -17,8 +17,8 @@ RSpec.describe "As a visitor I visit professors show page" do
   end
   it "displays a list of the names of students the professors have" do
     visit "/professors/#{@snape.id}"
-    require "pry"
-    binding.pry
-    expect(page).to have_content()
+
+    expect(page).to have_content(@harry.name)
+    expect(page).to have_content(@longbottom.name)
   end
 end
