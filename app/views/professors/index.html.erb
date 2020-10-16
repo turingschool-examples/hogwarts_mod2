@@ -1,5 +1,5 @@
 <h1> Hogwarts  Professors</h1>
-<ul class=student-names>
+<ul class=professor-names>
 <% @professors.order(:name).each do |professor| %>
   <li><h3>Name: <%= professor.name %></h3>
   <p>Age: <%= professor.age %></p>
