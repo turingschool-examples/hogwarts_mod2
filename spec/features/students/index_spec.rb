@@ -60,9 +60,11 @@ describe "As a visitor," do
 
       visit '/students'
 
-      expect(page.all('p')[0]).to have_content("Draco Malfoy: 2")
-      expect(page.all('p')[1]).to have_content("Harry Potter: 3")
-      expect(page.all('p')[2]).to have_content("Luna Lovegood: 1")
+      within '#student-info' do
+        expect(page.all('p')[0]).to have_content("Draco Malfoy: 2")
+        expect(page.all('p')[1]).to have_content("Harry Potter: 3")
+        expect(page.all('p')[2]).to have_content("Luna Lovegood: 1")
+      end
     end
   end
 end

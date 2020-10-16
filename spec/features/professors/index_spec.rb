@@ -21,9 +21,11 @@ describe "As a visitor," do
 
       visit '/professors'
 
-      expect(page.all('p')[0]).to have_content("Name: Minerva McGonagall, Age: 204, Specialty: Transfiguration")
-      expect(page.all('p')[1]).to have_content("Name: Rubeus Hagrid, Age: 51, Specialty: Care of Magical Creatures")
-      expect(page.all('p')[2]).to have_content("Name: Severus Snape, Age: 42, Specialty: Potions")
+      within '#professor-info' do
+        expect(page.all('p')[0]).to have_content("Name: Minerva McGonagall, Age: 204, Specialty: Transfiguration")
+        expect(page.all('p')[1]).to have_content("Name: Rubeus Hagrid, Age: 51, Specialty: Care of Magical Creatures")
+        expect(page.all('p')[2]).to have_content("Name: Severus Snape, Age: 42, Specialty: Potions")
+      end
     end
   end
 end
