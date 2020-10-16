@@ -2,4 +2,10 @@
 
 <p>Average Age: <%= ProfessorStudent.average_age(params[:professor_id]) %></p>
 
-<%= ProfessorStudent.students(params[:professor_id]) %>
+<% students = ProfessorStudent.students(params[:professor_id]) %>
+
+<ul>
+<% students.each do |student| %>
+  <li><%= student %></li>
+<% end %>
+</ul>
