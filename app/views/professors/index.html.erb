@@ -1,6 +1,8 @@
 <h1>The Esteemed Professors of Hogwarts</h1>
 
-<% @professors.each do |professor| %>
+<% ordered_profs = @professors.sort_by { |prof| prof.name } %>
+
+<% ordered_profs.each do |professor| %>
   <h4>Name: <a href=<%= "/professors/#{professor.id}" %>><%= professor.name %></a></h4>
   <p>Age: <%= professor.age %></p>
   <p>Specialty: <%= professor.specialty %></p><br>
