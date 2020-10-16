@@ -28,6 +28,7 @@ describe "As a visitor" do
 
       visit '/students'
 
+      #Using Orderly Gem
       expect(harry.name).to appear_before(longbottom.name)
       expect(harry.name).to_not appear_before(malfoy.name)
 
@@ -36,6 +37,11 @@ describe "As a visitor" do
 
       expect(longbottom.name).to_not appear_before(harry.name)
       expect(longbottom.name).to_not appear_before(malfoy.name)
+
+      #Using plain 'ol Capybara
+      expect(page.all('.student')[0]).to have_content(malfoy.name)
+      expect(page.all('.student')[1]).to have_content(harry.name)
+      expect(page.all('.student')[2]).to have_content(longbottom.name)
     end
   end
 end

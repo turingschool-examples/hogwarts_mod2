@@ -23,6 +23,7 @@ describe "As a visitor" do
 
       visit '/professors'
 
+      #Using Orderly Gem
       expect(hagarid.name).to appear_before(snape.name)
       expect(hagarid.name).to_not appear_before(lupin.name)
 
@@ -31,6 +32,11 @@ describe "As a visitor" do
 
       expect(snape.name).to_not appear_before(hagarid.name)
       expect(snape.name).to_not appear_before(lupin.name)
+
+      #Using plain 'ol Capybara
+      expect(page.all('.professor')[0]).to have_content(lupin.name)
+      expect(page.all('.professor')[1]).to have_content(hagarid.name)
+      expect(page.all('.professor')[2]).to have_content(snape.name)
     end
   end
 end
