@@ -85,7 +85,9 @@ describe "As a visitor," do
 
       visit "/professors/#{professor_1.id}"
 
-      expect(page).to have_content("Average Age: 15.7")
+      within '#average-age' do
+        expect(page.all('p')[0]).to have_content("Average Age: 15.7")
+      end
     end
   end
 end
