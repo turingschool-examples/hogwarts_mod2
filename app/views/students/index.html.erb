@@ -1,6 +1,7 @@
 <h1>Hogwarts Students</h1>
 
 <h4>Student: Number of Professors</h4>
-<% @students.each do |student| %>
+<% ordered_stdnts = @students.sort_by { |stdnt| stdnt.name } %>
+<% ordered_stdnts.each do |student| %>
   <p><%= "#{student.name}: #{student.professor_students.count}" %></p>
 <% end %>
