@@ -23,6 +23,11 @@ describe "As a visitor" do
       name: "Harry Potter",
       age: 13,
       house: "Gryffindor")
+    @chang = Student.create!(
+      name: "Cho Chang",
+      age: 14,
+      house: "Ravenclaw")
+
     ProfessorStudent.create!(professor: @mcgonagall, student: @longbottom)
     ProfessorStudent.create!(professor: @mcgonagall, student: @potter)
     ProfessorStudent.create!(professor: @snape, student: @malfoy)
@@ -35,6 +40,15 @@ describe "As a visitor" do
       expect(page).to have_content("#{@longbottom.name}: #{@longbottom.professors.length}")
       expect(page).to have_content("#{@malfoy.name}: #{@malfoy.professors.length}")
       expect(page).to have_content("#{@potter.name}: #{@potter.professors.length}")
+    end
+
+    it "Shows a list of students in alphabetical order" do
+      visit '/students'
+
+      expect(page.all('li')[0]).to have_content("#{@chang.name}")
+      expect(page.all('li')[1]).to have_content("#{@malfoy.name}")
+      expect(page.all('li')[2]).to have_content("#{@potter.name}")
+      expect(page.all('li')[3]).to have_content("#{@longbottom.name}")
     end
   end
 
