@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>HogwartsAgain</title>
+    <title>Welcome to Hogwarts</title>
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -9,6 +9,7 @@
   </head>
 
   <body>
+    See all: <%= link_to 'Professors', professors_path %> | <%= link_to 'Students', students_path %>
     <%= yield %>
   </body>
 </html>
