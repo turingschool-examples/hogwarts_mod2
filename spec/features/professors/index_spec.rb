@@ -17,5 +17,13 @@ describe 'As a visitor' do
       expect(page).to have_content(@lupin.name)
       expect(page).to have_content(@hagrid.age)
     end
+
+    it "I see the list in alphabetical order" do
+      visit '/professors'
+
+      expect(page.all('li')[0]).to have_content(@lupin.name)
+      expect(page.all('li')[1]).to have_content(@hagrid.name)
+      expect(page.all('li')[2]).to have_content(@snape.name)
+    end
   end
 end
