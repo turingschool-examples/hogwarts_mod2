@@ -29,7 +29,7 @@ When you have completed this challenge, submit by creating a Pull Request back t
 * This challenge uses a many-to-many relationship (your migrations are already built), be sure to check your setup/schema carefully.
 * You also are starting with seeds, so if you need any objects for your tests, feel free to grab the ones from the seeds file.
 * All model tests for validations and relationships have been made.
-* You will have12 failing model tests as soon as you set up this challenge and run your tests (Let your instructor know if you are not seeing 12 failing tests)
+* You will have 12 failing model tests as soon as you set up this challenge and run your tests (Let your instructor know if you are not seeing 12 failing tests)
 * Get these tests to pass before moving on to the user stories below.
 
 ### User Stories
@@ -72,4 +72,4 @@ I see the average age of all students for that professor.
 ### Extension
 ```
 User Story Extension
-On all index pages, all information is listed alphabetically. 
+On all index pages, all information is listed alphabetically.
