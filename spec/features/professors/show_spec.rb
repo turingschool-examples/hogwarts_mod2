@@ -28,6 +28,7 @@ describe "As a visitor" do
     ProfessorStudent.create!(professor: @mcgonagall, student: @potter)
     ProfessorStudent.create!(professor: @snape, student: @malfoy)
     ProfessorStudent.create!(professor: @snape, student: @longbottom)
+    ProfessorStudent.create!(professor: @snape, student: @potter)
   end
 
     it "Shows a list of students the professor has" do
@@ -41,6 +42,14 @@ describe "As a visitor" do
       visit "/professors/#{@snape.id}"
 
       expect(page).to have_content("Average Age: #{@snape.students.average_age}")
+    end
+
+    it "Shows a list of students the prof has alphabetically" do
+      visit "/professors/#{@snape.id}"
+
+      expect(page.all('li')[0]).to have_content("#{@malfoy.name}")
+      expect(page.all('li')[1]).to have_content("#{@potter.name}")
+      expect(page.all('li')[2]).to have_content("#{@longbottom.name}")
     end
 
   end

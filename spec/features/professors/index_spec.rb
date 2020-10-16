@@ -2,6 +2,10 @@ require 'rails_helper'
 
 describe "As a visitor" do
   before :each do
+    @hagrid = Professor.create!(
+                  name: "Rubeus Hagrid",
+                  age: 46,
+                  specialty: "Care of Magical Creatures")
     @mcgonagall = Professor.create!(
                   name: "Minerva McGonagall",
                   age: 204,
@@ -12,7 +16,7 @@ describe "As a visitor" do
                   specialty: "Potions")
   end
 
-  describe "When I visit the professor show page" do
+  describe "When I visit the professor index page" do
     it "Shows a list of professors and their details" do
       visit '/professors'
 
@@ -23,6 +27,14 @@ describe "As a visitor" do
       expect(page).to have_content("#{@snape.name}")
       expect(page).to have_content("#{@snape.age}")
       expect(page).to have_content("#{@snape.specialty}")
+    end
+
+    it "Shows a list of profs in alphabetical order" do
+      visit "/professors/"
+
+      expect(page.all('li')[0]).to have_content("#{@mcgonagall.name}")
+      expect(page.all('li')[1]).to have_content("#{@hagrid.name}")
+      expect(page.all('li')[2]).to have_content("#{@snape.name}")
     end
   end
 
