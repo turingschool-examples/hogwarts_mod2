@@ -19,7 +19,7 @@ describe "as a visitor" do
       ProfessorStudent.create(student_id: @longbottom.id, professor_id: @snape.id)
     end
     it "then I see a list of students and the number of professors each student has" do
-      visit("students")
+      visit("/students")
 
       within("#student-#{@harry.id}") do
         expect(page).to have_content("Harry Potter: 3")
