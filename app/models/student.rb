@@ -9,4 +9,8 @@ class Student <ApplicationRecord
   def self.average_age
     average(:age).round(2)
   end
+
+  def num_professors
+    professors.count
+  end
 end
