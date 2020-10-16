@@ -1,12 +1,5 @@
 require 'rails_helper'
 
-# As a visitor,
-# When I visit '/professors',
-# I see a list of professors with the following information:
-# -Name
-# -Age
-# -Specialty
-
 RSpec.describe 'As a visitor' do
   describe 'when I visit /professors' do
     it 'should see a list of professors with their information.' do
