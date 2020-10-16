@@ -24,5 +24,18 @@ describe "As a visitor" do
       expect(page).to_not have_content("#{malfoy.name}")
       expect(page).to_not have_content("#{lupin.name}")
     end
+
+    it "can get average age of students for given professor" do
+      snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
+      harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
+      ProfessorStudent.create(student_id: harry.id, professor_id: snape.id)
+      ProfessorStudent.create(student_id: longbottom.id, professor_id: snape.id)
+
+      visit("/professors")
+      click_link("#{snape.name}'s Students")
+
+      expect(page).to have_content("Average student age: #{snape.average_student_age}")
+    end
   end
 end
