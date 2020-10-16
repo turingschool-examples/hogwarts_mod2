@@ -1,9 +1,7 @@
 <h2>Students Index Page</h2>
 
-<% @students.each do |professor| %>
-  <section id="professor-<%= professor.id %>">
-    <h3>Name: <%= professor.name %></h3>
-    <h3>Age: <%= professor.age %></h3>
-    <h3>Specialty: <%= professor.specialty %></h3>
+<% @students.each do |student| %>
+  <section id="student-<%= student.id %>">
+    <h3><%= student.name %>: <%=  student.professors.count %></h3>
   </section>
 <% end %>

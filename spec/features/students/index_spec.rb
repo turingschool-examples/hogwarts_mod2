@@ -1,11 +1,5 @@
 require 'rails_helper'
 
-As a visitor,
-When I visit '/students'
-I see a list of students and the number of professors each student has.
-(e.g. "Draco Malfoy: 5"
-     "Nymphadora Tonks: 10")
-
 describe "as a visitor" do
   describe "when I visit /students" do
     before :each do
