@@ -12,7 +12,6 @@ class ProfessorStudent <ApplicationRecord
   def self.average_age(professor_id)
     ids = ProfessorStudent.where("professor_id = #{professor_id}").pluck(:student_id).to_a
     sum = ids.sum do |id|
-      # require "pry"; binding.pry
       Student.where("id = #{id}").pluck(:age).first
     end
     (sum.to_f / ids.count).round(1)
