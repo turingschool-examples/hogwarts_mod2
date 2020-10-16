@@ -5,4 +5,8 @@ class Student <ApplicationRecord
 
   has_many :professor_students
   has_many :professors, through: :professor_students
+
+  def count_of_professors
+    professor_students.count {|ps| ps.student_id == id}
+  end
 end
