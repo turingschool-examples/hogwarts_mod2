@@ -9,9 +9,9 @@ describe 'As a visitor' do
     @student1 = @professor1.students.create!(name: "Harry Potter",
                                              age: "11",
                                              house: "Gryffindor")
-    @student2 = @professor1.students.create!(name: "Hermione Granger",
+    @student2 = @professor1.students.create!(name: "Draco Malfoy",
                                              age: "12",
-                                             house: "Gryffindor")
+                                             house: "Slytherin")
   end
 
   describe 'when I visit a professors show page' do
@@ -26,6 +26,15 @@ describe 'As a visitor' do
       visit "/professors/#{@professor1.id}"
 
       expect(page).to have_content("Average student age: 11.5")
+    end
+
+    it 'I see the students ordered by name' do
+      visit "/professors/#{@professor1.id}"
+
+      within('.professor-students') do
+        expect(page.all('p')[0]).to have_content(@student2.name)
+        expect(page.all('p')[1]).to have_content(@student1.name)
+      end
     end
   end
 end
