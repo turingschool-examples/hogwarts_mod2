@@ -4,13 +4,13 @@ describe "As a visitor" do
   describe 'When I visit a professors show page' do
   before :each do
     @mcgonagall = Professor.create!(
-                  name: "Minerva McGonagall",
-                  age: 204,
-                  specialty: "Transfiguration")
+      name: "Minerva McGonagall",
+      age: 204,
+      specialty: "Transfiguration")
     @snape = Professor.create!(
-                  name: "Severus Snape",
-                  age: 40,
-                  specialty: "Potions")
+      name: "Severus Snape",
+      age: 40,
+      specialty: "Potions")
 
     @longbottom = Student.create!(
       name: "Neville Longbottom",

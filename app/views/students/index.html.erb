@@ -1,3 +1,4 @@
 <% @students.sort_alpha.each do |student| %>
+
   <li><%= student.name %>: <%= student.professors.length %></li>
 <% end %>

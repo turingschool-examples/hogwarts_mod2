@@ -3,13 +3,13 @@ require 'rails_helper'
 describe "As a visitor" do
   before :each do
     @mcgonagall = Professor.create!(
-                  name: "Minerva McGonagall",
-                  age: 204,
-                  specialty: "Transfiguration")
+      name: "Minerva McGonagall",
+      age: 204,
+      specialty: "Transfiguration")
     @snape = Professor.create!(
-                  name: "Severus Snape",
-                  age: 40,
-                  specialty: "Potions")
+      name: "Severus Snape",
+      age: 40,
+      specialty: "Potions")
 
     @longbottom = Student.create!(
       name: "Neville Longbottom",

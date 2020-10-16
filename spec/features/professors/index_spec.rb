@@ -3,17 +3,17 @@ require 'rails_helper'
 describe "As a visitor" do
   before :each do
     @hagrid = Professor.create!(
-                  name: "Rubeus Hagrid",
-                  age: 46,
-                  specialty: "Care of Magical Creatures")
+      name: "Rubeus Hagrid",
+      age: 46,
+      specialty: "Care of Magical Creatures")
     @mcgonagall = Professor.create!(
-                  name: "Minerva McGonagall",
-                  age: 204,
-                  specialty: "Transfiguration")
+      name: "Minerva McGonagall",
+      age: 204,
+      specialty: "Transfiguration")
     @snape = Professor.create!(
-                  name: "Severus Snape",
-                  age: 40,
-                  specialty: "Potions")
+      name: "Severus Snape",
+      age: 40,
+      specialty: "Potions")
   end
 
   describe "When I visit the professor index page" do
