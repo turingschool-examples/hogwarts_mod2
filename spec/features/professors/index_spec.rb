@@ -30,14 +30,14 @@ describe "As a visitor" do
         })
 
       expect(page).to have_content("#{prof_1.name}")
-      expect(page).to have_content("#{prof_1.age}")
-      expect(page).to have_content("#{prof_1.specialty}")
+      expect(page).to have_content("Age: #{prof_1.age}")
+      expect(page).to have_content("Specialty: #{prof_1.specialty}")
       expect(page).to have_content("#{prof_2.name}")
-      expect(page).to have_content("#{prof_2.age}")
-      expect(page).to have_content("#{prof_2.specialty}")
+      expect(page).to have_content("Age: #{prof_2.age}")
+      expect(page).to have_content("Specialty: #{prof_2.specialty}")
       expect(page).to have_content("#{prof_3.name}")
-      expect(page).to have_content("#{prof_3.age}")
-      expect(page).to have_content("#{prof_3.specialty}")
+      expect(page).to have_content("Age: #{prof_3.age}")
+      expect(page).to have_content("Specialty: #{prof_3.specialty}")
     end
   end
 end
