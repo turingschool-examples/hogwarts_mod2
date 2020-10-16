@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe "As a visitor", type: :feature do
   describe "when I visit '/professors'" do
-    it "I see a list of professors in (alphabetical order) with their name, age, and specialty" do
+    it "I see a list of professors in alphabetical order with their name, age, and specialty" do
 
       snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
       hagrid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
@@ -10,11 +10,11 @@ RSpec.describe "As a visitor", type: :feature do
 
       visit '/professors'
 
-      # within ".professors" do
-      #   expect(page.all('.professor')[0]).to have_content(lupin.name)
-      #   expect(page.all('.professor')[1]).to have_content(hagrid.name)
-      #   expect(page.all('.professor')[2]).to have_content(snape.name)
-      # end
+      within ".professors" do
+        expect(page.all('.professor')[0]).to have_content(lupin.name)
+        expect(page.all('.professor')[1]).to have_content(hagrid.name)
+        expect(page.all('.professor')[2]).to have_content(snape.name)
+      end
 
       within "#professor-#{snape.id}" do
         expect(page).to have_content(snape.name)
