@@ -11,6 +11,6 @@ class ProfessorStudent <ApplicationRecord
 
   def self.average_age(professor_id)
     students = self.students(professor_id)
-    Student.average(:age).where()
+    Student.average(:age).where("student_id = #{student_id}")
   end
 end

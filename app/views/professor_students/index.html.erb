@@ -1,5 +1,5 @@
 <h1>Students for Teacher</h1>
 
-<p>Average Age: </p>
+<p>Average Age: <%= ProfessorStudent.average_age(params[:professor_id]) %></p>
 
 <%= ProfessorStudent.students(params[:professor_id]) %>
