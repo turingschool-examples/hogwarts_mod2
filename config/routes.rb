@@ -3,5 +3,6 @@ Rails.application.routes.draw do
 
   #Professors
   get '/professors', to: 'professors#index'
+  get '/professors/:id', to: 'professors#show'
 
 end
