@@ -5,4 +5,8 @@ class Student <ApplicationRecord
   validates_presence_of :name
   validates_presence_of :age
   validates_presence_of :house
+
+  def num_of_profs
+    self.professors.count
+  end
 end
