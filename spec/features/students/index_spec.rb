@@ -8,7 +8,7 @@ describe 'As a visitor' do
       @longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
     end
 
-    it "I see a list of professors with information" do
+    it "I see a list of students with information" do
       visit '/students'
 
       expect(page).to have_content(@longbottom.name)
