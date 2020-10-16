@@ -51,7 +51,6 @@ describe "As a visitor" do
 
       visit "/professors"
 
-      expect(page).to have_content
     end
   end
 end
