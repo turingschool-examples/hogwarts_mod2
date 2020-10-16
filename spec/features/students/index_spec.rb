@@ -29,5 +29,11 @@ RSpec.describe 'As a visitor,' do
       expect(page).to have_content("Draco Malfoy: 2")
       expect(page).to have_content("Neville Longbottom: 1")
     end
+
+    it 'I see the list ordered alphabetically by name' do 
+      visit "/students"
+
+      expect("Draco Malfoy").to appear_before("Harry Potter", only_text: true)
+    end
   end
 end

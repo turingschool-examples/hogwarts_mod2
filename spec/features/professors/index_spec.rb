@@ -29,5 +29,11 @@ RSpec.describe 'As a visitor,' do
       expect(page).to have_content(@lupin.age)
       expect(page).to have_content(@lupin.specialty)
     end
+
+    it 'I see the list ordered alphabetically by name' do 
+      visit "/professors"
+
+      expect("Remus Lupin").to appear_before("Severus Snape", only_text: true)
+    end
   end
 end
