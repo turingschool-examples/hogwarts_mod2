@@ -34,4 +34,15 @@ RSpec.describe Professor, type: :model do
       expect(lupin.average_age).to eq(11.5)
     end
   end
+
+  describe 'class methods' do
+    it '.by_name' do
+      snape = Professor.create(name: 'Severus Snape', age: 45, specialty: 'Potions')
+      hagarid = Professor.create(name: 'Rubeus Hagrid', age: 38, specialty: 'Care of Magical Creatures')
+      lupin = Professor.create(name: 'Remus Lupin', age: 49, specialty: 'Defense Against The Dark Arts')
+
+      expected = [lupin, hagarid, snape]
+      expect(Professor.by_name).to eq(expected)
+    end
+  end
 end

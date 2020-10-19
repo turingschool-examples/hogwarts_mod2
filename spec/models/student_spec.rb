@@ -35,4 +35,17 @@ RSpec.describe Student, type: :model do
       expect(longbottom.num_professors).to eq(1)
     end
   end
+
+  describe 'class methods' do
+    it '.by_name' do
+      harry = Student.create(name: 'Harry Potter', age: 11, house: 'Gryffindor')
+      malfoy = Student.create(name: 'Draco Malfoy', age: 12, house: 'Slytherin')
+      longbottom = Student.create(name: 'Neville Longbottom', age: 11, house: 'Gryffindor')
+
+
+      expected = [malfoy, harry, longbottom]
+
+      expect(Student.by_name).to eq(expected)
+    end
+  end
 end

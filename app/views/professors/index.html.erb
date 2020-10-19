@@ -2,8 +2,10 @@
 
 <div>
   <% @professors.each do |professor| %>
-    <h3><%= professor.name %></h3>
-    <p><%= professor.age %><br>
-    <%= professor.specialty %><br></p>
+    <section class="professor">
+      <h3><%= professor.name %></h3>
+      <p><%= professor.age %><br>
+      <%= professor.specialty %><br></p>
+    </section>
   <% end %>
 </div>
