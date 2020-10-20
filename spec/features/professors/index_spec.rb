@@ -17,6 +17,18 @@ describe "As a visitor" do
                           specialty: "Defense Against The Dark Arts")
       visit '/professors'
 
+      within "#professor-#{snape.id}" do
+        expect(page).to have_css('.name')
+        expect(page).to have_css('.age')
+        expect(page).to have_css('.specialty')
+      end
+
+      within "#professor-#{hagrid.id}" do
+        expect(page).to have_css('.name')
+        expect(page).to have_css('.age')
+        expect(page).to have_css('.specialty')
+      end
+
       expect(page).to have_content("#{snape.name}")
       expect(page).to have_content("#{snape.age}")
       expect(page).to have_content("#{snape.specialty}")
