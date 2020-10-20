@@ -1,5 +1,7 @@
 <h1>Students</h1>
 
 <% @students.each do |student| %>
-  <p><%= student.name %>: <%= student.number_of_professors(student.id) %></p>
+  <section id='student-<%= student.id %>'>
+    <p><%= student.name %>: <%= student.number_of_professors(student.id) %></p>
+  </section>
 <% end %>
