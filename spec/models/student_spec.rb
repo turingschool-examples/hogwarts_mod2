@@ -13,7 +13,7 @@ RSpec.describe Student, type: :model do
     it {should have_many(:professors).through(:professor_students)}
   end
 
-  describe "instance method" do #specific student vs. class methos for all students
+  describe "instance methods" do #specific student vs. class methos for all students
     it '#professor_count' do
       snape = Professor.create!(
                           name: "Severus Snape",
@@ -46,4 +46,24 @@ RSpec.describe Student, type: :model do
     end
   end
 
+  describe "class methods" do
+    it ".by_name" do
+      harry = Student.create(
+                        name: "Harry Potter" ,
+                        age: 11 ,
+                        house: "Gryffindor" )
+      malfoy = Student.create(
+                        name: "Draco Malfoy" ,
+                        age: 12 ,
+                        house: "Slytherin" )
+      longbottom = Student.create(
+                        name: "Neville Longbottom" ,
+                        age: 11 ,
+                        house: "Gryffindor" )
+
+      expected = [malfoy, harry, longbottom]
+
+      expect(Student.by_name).to eq(expected)
+    end
+  end
 end

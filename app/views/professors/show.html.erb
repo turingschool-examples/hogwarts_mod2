@@ -1,5 +1,8 @@
+<p>Average Student Age: <%= @professor.student_average_age.round(2) %></p>
+
 <section class="students">
-<% @students.each do |student| %>
+<% @professor.students.each do |student| %>
   <p class="name"><%= student.name %></p>
+  <p>Number of Professors: <%= student.professor_count %></p>
 <% end %>
 </section>

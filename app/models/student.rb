@@ -9,7 +9,9 @@ class Student <ApplicationRecord
     professors.count
   end
 
-  def number_of_professors(id)
-    ProfessorStudent.where("student_id = #{id}").count
+  def self.by_name
+    order(:name)
+    # self.order(:name) => self is implied
+    #Student.order(:name) => less conventional
   end
 end
