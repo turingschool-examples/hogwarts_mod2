@@ -33,7 +33,7 @@ RSpec.describe Student, type: :model do
 
         expect(harry.professor_count).to eq(3)
         expect(malfoy.professor_count).to eq(2)
-        expect(harry.professor_count).to eq(1)
+        expect(longbottom.professor_count).to eq(1)
       end
     end
   end
