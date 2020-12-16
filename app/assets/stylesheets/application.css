@@ -27,3 +27,11 @@
    line-height: 2em;
    text-align: center;
  }
+
+ #name {
+   padding: 0px;
+   font-family: 'courier new';
+   line-height: 2em;
+   text-align: left;
+
+ }
