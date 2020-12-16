@@ -33,7 +33,7 @@ RSpec.describe Professor, type: :model do
         )
     end
     it 'Create method that averages students age' do
-      expect(@snape.student_average_age).to eq(11)
+      expect(@snape.student_average_age).to eq("Average Age: 11.0")
     end
   end
 end
