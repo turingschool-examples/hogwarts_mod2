@@ -20,9 +20,9 @@ RSpec.describe Student, type: :model do
 
       @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
 
-      ProfessorStudent.create(student_id: harry.id, professor_id: snape.id)
-      ProfessorStudent.create(student_id: harry.id, professor_id: hagarid.id)
-      ProfessorStudent.create(student_id: harry.id, professor_id: lupin.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: snape.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: hagarid.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: lupin.id)
     end
 
     it 'counts the number of professors a student has' do
