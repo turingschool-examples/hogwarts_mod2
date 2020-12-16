@@ -2,6 +2,6 @@
 
 <ul>
   <% @students.each do |student| %>
-  <li><%= student.name %>: <%= student.professors.count %></li>
+  <li><%= link_to "#{student.name}", "students/#{student.id}" %>: <%= student.professors.count %></li>
   <% end %>
 </ol>
