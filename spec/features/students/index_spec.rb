@@ -23,5 +23,11 @@ RSpec.describe 'As A Visitor' do
       expect(page).to have_content(@malfoy.name)
       expect(page).to have_content(@malfoy.professors.count)
     end
+
+    it 'lists all students in alphabetical order' do
+      visit '/students'
+
+      expect("#{@malfoy.name}").to appear_before("#{@harry.name}")
+    end
   end
 end

@@ -23,5 +23,12 @@ RSpec.describe 'As A Visitor' do
       expect(page).to have_content(@lupin.age)
       expect(page).to have_content(@lupin.specialty)
     end
+
+    it 'shows all names in alphabetical order' do
+      visit '/professors'
+
+      expect("#{@lupin.name}").to appear_before("#{@hagrid.name}")
+      expect("#{@hagrid.name}").to appear_before("#{@snape.name}")
+    end
   end
 end
