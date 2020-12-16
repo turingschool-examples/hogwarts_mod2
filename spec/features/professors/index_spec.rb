@@ -41,5 +41,14 @@ describe "As a visitor" do
       end
     end
 
+    it 'sorts professors alphabetically' do
+      visit professors_path
+      expect(current_path).to eq(professors_path)
+
+      expect(all('.professor-name')[0].text).to eq(@lupin.name)
+      expect(all('.professor-name')[1].text).to eq(@hagarid.name)
+      expect(all('.professor-name')[2].text).to eq(@snape.name)
+    end
+
   end
 end
