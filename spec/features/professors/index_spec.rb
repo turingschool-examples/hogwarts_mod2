@@ -22,4 +22,14 @@ RSpec.describe 'Professors index page' do
     expect(page).to have_content(@lupin.specialty)
 
   end
+
+  xit "displays professors alphabetically" do
+    visit '/professors'
+
+    within '#name' do
+      expect(page.all('.name')[0]).to have_content("Remus Lupin")
+      expect(page.all('.name')[1]).to have_content("Rubeus Hagrid")
+      expect(page.all('.name')[2]).to have_content("Severus Snape")
+    end
+  end
 end
