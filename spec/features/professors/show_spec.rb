@@ -43,6 +43,6 @@ describe "When I visit '/professors/:id'" do
 
     visit "/professors/#{snape.id}"
 
-    expect(page).to have_content("Average Age: 11.5")
+    expect(page).to have_content("Average Student Age: 11.5")
   end
 end
