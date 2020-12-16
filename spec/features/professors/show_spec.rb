@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Professor, type: :model do
+RSpec.describe "can show stuff" do
   before :each do
     @snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
     @hagarid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
@@ -18,28 +18,17 @@ RSpec.describe Professor, type: :model do
     ProfessorStudent.create(student_id: @longbottom.id, professor_id: @snape.id)
   end
 
-  describe 'validations' do
-    it {should validate_presence_of :name}
-    it {should validate_presence_of :age}
-    it {should validate_presence_of :specialty}
+  it "Can list all students" do
+    visit professor_path(@lupin.id)
+
+    expect(page).to have_content("#{@malfoy.name}")
+    expect(page).to have_content("#{@harry.name}")
+    expect(page).to have_content("#{@harry.age}")
   end
 
-  describe 'relationships' do
-    it {should have_many :professor_students}
-    it {should have_many(:students).through(:professor_students)}
-  end
+  it "can show average age" do
+    visit professor_path(@lupin.id)
 
-  describe "instance method" do
-    it "can average" do
-
-      expect(@snape.average_age).to eq(11)
-      expect(@lupin.average_age).to eq(11.5)
-    end
-  end
-
-  describe 'class method and scope' do
-    it "can order" do
-      expect(Professor.all).to eq([@lupin, @hagarid, @snape])
-    end
+    expect(page).to have_content("Average age of MY students: #{@lupin.average_age}")
   end
 end
