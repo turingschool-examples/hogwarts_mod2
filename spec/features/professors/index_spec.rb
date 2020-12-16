@@ -5,6 +5,10 @@ describe 'Professor Index Page' do
     it 'lists professors and their information' do
       visit "/professors"
 
+      expect(page).to have_content("Accio Professors")
+      expect(page).to have_content("Age:")
+      expect(page).to have_content("Specialty:")
+
       expect(page).to have_content("Severus Snape")
       expect(page).to have_content("45")
       expect(page).to have_content("Potions")
