@@ -8,7 +8,7 @@
 
 
 snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
-hagarid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
+hagrid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
 lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
 
 harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
