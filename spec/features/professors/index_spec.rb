@@ -39,4 +39,11 @@ RSpec.describe "Professors Index" do
       within("#prof-#{prof.id}") {expect(page).to have_content(prof.specialty)}
     end
   end
+
+  it 'lists professors in alphabetical order' do
+    visit professors_path
+
+    expect(@lupin.name).to appear_before(@hagarid)
+    expect(@hagarid.name).to appear_before(@snape)
+  end
 end
