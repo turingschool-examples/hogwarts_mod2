@@ -24,6 +24,8 @@ RSpec.describe 'student index page', type: :feature do
       expect(page).to have_content("#{malfoy.name}: 2")
       expect(page).to have_content("#{longbottom.name}: 1")
 
+      expect(malfoy.name).to appear_before(longbottom.name)
+
     end
   end
 end

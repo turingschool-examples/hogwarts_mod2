@@ -20,6 +20,8 @@ RSpec.describe 'professors index page', type: :feature do
       expect(page).to have_content(lupin.name)
       expect(page).to have_content(lupin.age)
       expect(page).to have_content(lupin.specialty)
+
+      expect(lupin.name).to appear_before(hagarid.name)
     end
   end
 end
