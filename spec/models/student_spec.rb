@@ -13,6 +13,18 @@ RSpec.describe Student, type: :model do
     it {should have_many(:professors).through(:professor_students)}
   end
 
+  describe 'class methods' do
+    describe '::order_by_name (scope)' do
+      it 'returns all students ordered alpha by name' do
+        harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+        malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+        longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
+
+        expect(Student.order_by_name).to eq([malfoy, harry, longbottom])
+      end
+    end
+  end
+
   describe 'instance methods' do
     describe '#professor_count' do
       it 'returns students professors count' do
