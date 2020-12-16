@@ -1,7 +1,7 @@
 <h2>Hogwarts Professors</h2>
-
-<% @professors.all do |professor| %>
-<%= professor.name %><br>
-<%= professor.age %><br>
-<%= professor.specialty %><br>
-<% end %>
+<p>
+<% @professors.each do |professor| %>
+Name: <%= link_to "#{professor.name}", "/professors/#{professor.id}" %><br>
+Age: <%= professor.age %><br>
+Specialty: <%= professor.specialty %><br><br>
+<% end %></p>
