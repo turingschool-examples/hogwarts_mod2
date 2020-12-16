@@ -1,0 +1,11 @@
+<h2>Professors Index</h2>
+
+<ul id='professors-list'>
+  <% @professors.each do |professor| %>
+    <li id="professor-<%= professor.id %>">
+      Name: <%= professor.name %>
+      Age: <%= professor.age %>
+      Specialty: <%= professor.specialty %>
+    </li>
+  <% end %>
+</ul>
