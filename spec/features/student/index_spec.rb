@@ -23,6 +23,15 @@ RSpec.describe "As a visitor when I visit '/students'" do
     expect(page).to have_content("#{harry.name}: 3")
     expect(page).to have_content("#{malfoy.name}: 2")
     expect(page).to have_content("#{longbottom.name}: 1")
+  end
+    it "can see list of students alphabetically" do 
+      harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+      longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
 
+      visit "/students"
+
+      expect("#{malfoy.name}").to appear_before("#{harry.name}")
+      expect("#{harry.name}").to appear_before("#{longbottom.name}")
   end
 end
