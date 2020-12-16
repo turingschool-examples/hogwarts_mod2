@@ -33,4 +33,9 @@ RSpec.describe Professor, type: :model do
     it "ouputs average age of the professors students" do
       expect(@lupin.students_ave_age). to eq(11.5)
     end
+
+  describe 'order_alphabetically'
+    it "orders professors alphabetically by name" do
+      expect(Professor.order_alphabetically). to eq([@lupin, @hagrid, @snape])
+    end
 end
