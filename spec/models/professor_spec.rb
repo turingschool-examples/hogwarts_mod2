@@ -11,4 +11,28 @@ RSpec.describe Professor, type: :model do
     it {should have_many :professor_students}
     it {should have_many(:students).through(:professor_students)}
   end
+
+  describe 'class methods' do
+    before :each do
+      @snape = Professor.create(name: "a", age: 45, specialty: "Potions")
+      @hagarid = Professor.create(name: "b", age: 38, specialty: "Care of Magical Creatures")
+      @lupin = Professor.create(name: "c", age: 49, specialty: "Defense Against The Dark Arts")
+
+      @harry = Student.create(name: "Harry Potter", age: 9, house: "Gryffindor")
+      @malfoy = Student.create(name: "Draco Malfoy", age: 10, house: "Slytherin")
+      @longbottom = Student.create(name: "Neville Longbottom", age: 11, house: "Gryffindor")
+
+      ProfessorStudent.create(student_id: @harry.id, professor_id: @snape.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: @hagarid.id)
+      ProfessorStudent.create(student_id: @harry.id, professor_id: @lupin.id)
+      ProfessorStudent.create(student_id: @malfoy.id, professor_id: @hagarid.id)
+      ProfessorStudent.create(student_id: @malfoy.id, professor_id: @lupin.id)
+      ProfessorStudent.create(student_id: @longbottom.id, professor_id: @snape.id)
+    end
+    
+    it '.alphabetical' do
+      expect(Professor.alphabetical).to eq([@snape, @hagarid, @lupin])
+    end
+  end
+
 end
