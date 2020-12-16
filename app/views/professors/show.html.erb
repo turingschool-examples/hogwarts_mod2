@@ -1,0 +1,6 @@
+<section class="info">
+<h2>Professor <%= @professor.name.split(' ')[1]%>
+<% @students.each do |stud|%>
+<li><%= stud.name%></li>
+<% end %>
+</section>

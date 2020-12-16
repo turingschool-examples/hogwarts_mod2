@@ -13,6 +13,6 @@ RSpec.describe 'Professors show page' do
   it 'Displays all students of the prof' do
     visit "/professors/#{@snape.id}"
 
-    expect(page).to have_content("#{@harry.name}") && have_content("#{@malfoy.name}") && not_have_content("#{@longbottom.name}")
+    expect(page).to have_content("#{@harry.name}") && have_content("#{@malfoy.name}") && have_no_content("#{@longbottom.name}")
   end
 end
