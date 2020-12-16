@@ -1,6 +1,7 @@
 <h1>All Students</h1>
-
+<p id=name>
 <% @students.each do |student| %>
   Name: <%= student.name %>
   : <%= student.professors.count %>
   <% end %>
+</p>
