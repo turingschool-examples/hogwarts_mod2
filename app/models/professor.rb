@@ -3,4 +3,8 @@ class Professor <ApplicationRecord
   has_many :students, through: :professor_students
 
   validates_presence_of :name, :age, :specialty
+
+  def students_avg_age
+    students.average(:age)
+  end
 end
