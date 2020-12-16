@@ -1,0 +1,9 @@
+<h2>Professors Show</h2>
+
+<h3>Professor Student List</h3>
+
+<ul id='professor-student-list'>
+  <% @professor.students.each do |student| %>
+    <li><%= student.name %></li>
+  <% end %>
+</ul>
