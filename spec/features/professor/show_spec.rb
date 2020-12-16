@@ -18,5 +18,12 @@ RSpec.describe "professor show" do
       expect(page).to have_content(@longbottom.name)
     end
 
+    it "sees the average age of all students for that professor" do 
+      visit "/professors/#{@snape.id}"
+
+      average_age = (@harry.age + @longbottom.age) / 2
+      expect(page).to have_content("average student age: #{average_age}")
+    end
+
   
 end
