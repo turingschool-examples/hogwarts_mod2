@@ -4,7 +4,7 @@ RSpec.describe Student, type: :model do
   before(:each) do
     @snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
     @hagarid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
-    @lupin = Professor.create(name: "Remus @", age: 49 , specialty: "Defense Against The Dark Arts")
+    @lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
 
     @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
     @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )

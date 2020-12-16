@@ -5,7 +5,7 @@ RSpec.describe 'As a visitor', type: :feature do
     before(:each) do
       @snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
       @hagarid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
-      @lupin = Professor.create(name: "Remus @", age: 49 , specialty: "Defense Against The Dark Arts")
+      @lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
 
       @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
       @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
@@ -25,6 +25,15 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content("#{@harry.name} : 3")
       expect(page).to have_content("#{@malfoy.name} : 2")
       expect(page).to have_content("#{@longbottom.name} : 1")
+    end
+    # Extension 
+    it 'On all index pages, all information is listed alphabetically'  do
+      visit "/students"
+
+      expect(@malfoy.name).to appear_before(@harry.name)
+      expect(@malfoy.name).to appear_before(@longbottom.name)    
+      expect(@harry.name).to_not appear_before(@malfoy.name)    
+      expect(@longbottom.name).to_not appear_before(@harry.name)   
     end
   end
 end
