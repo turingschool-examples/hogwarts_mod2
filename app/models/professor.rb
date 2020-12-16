@@ -10,5 +10,12 @@ class Professor <ApplicationRecord
       Student.where(id: student.id)
     end
   end
+
+  def self.average_age(students)
+    age = students.sum do |student|
+      student.age
+    end
+    (age.to_f / (students.count))
+  end
 end
 

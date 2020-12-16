@@ -22,5 +22,16 @@ RSpec.describe Professor, type: :model do
         expect(expected.select(:name)[0].name).to eq("Harry Potter")
       end
     end
+    
+    describe '::average_age' do
+      it 'averages the ages of the students' do
+        harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+        malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+
+        students = [harry, malfoy]
+
+        expect(Professor.average_age(students)).to eq(11.5)
+      end
+    end
   end
 end
