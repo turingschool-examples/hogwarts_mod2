@@ -24,19 +24,19 @@ describe "As a visitor" do
 
       within("#professor-#{@snape.id}") do
         expect(page).to have_content(@snape.name)
-        expect(page).to have_content(@snape.age)
+        expect(page).to have_content("Age: #{@snape.age}")
         expect(page).to have_content(@snape.specialty)
       end
 
       within("#professor-#{@hagarid.id}") do
         expect(page).to have_content(@hagarid.name)
-        expect(page).to have_content(@hagarid.age)
+        expect(page).to have_content("Age: #{@hagarid.age}")
         expect(page).to have_content(@hagarid.specialty)
       end
 
       within("#professor-#{@lupin.id}") do
         expect(page).to have_content(@lupin.name)
-        expect(page).to have_content(@lupin.age)
+        expect(page).to have_content("Age: #{@lupin.age}")
         expect(page).to have_content(@lupin.specialty)
       end
     end
