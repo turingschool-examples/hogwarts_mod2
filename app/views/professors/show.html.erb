@@ -4,3 +4,5 @@
   <li><%= student.name %></li>
   <% end %>
 </ul>
+
+Average Age: <%= @professor.students.average(:age) %>

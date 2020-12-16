@@ -6,6 +6,14 @@
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+    <header>
+    <div class="nav-bar">
+      <h1>Harry Potter and the Ruby on Rails</h1>
+      <ul>
+        <p><%= link_to "Professors", "/professors" %>
+          <%= link_to "Students", "/students" %>
+          <%= link_to 'Courses', "/courses" %>
+    </header>
   </head>
 
   <body>

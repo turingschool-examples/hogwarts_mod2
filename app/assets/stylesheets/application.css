@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+ @font-face {
+    font-family: 'harry_pregular';
+    src: url('/assets/fonts/HARRYP_.TTF')
+
+}
+
+ header {
+   padding: 10px;
+   background-color: black;
+   color: gold;
+   font-family: 'courier new';
+   line-height: 2em;
+   text-align: center;
+ }
