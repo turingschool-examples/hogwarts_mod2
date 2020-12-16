@@ -3,4 +3,9 @@ class Student <ApplicationRecord
   has_many :professors, through: :professor_students, class_name: 'Professor'
 
   validates_presence_of :name, :age, :house
+
+
+  def professor_count
+    self.professors.count
+  end
 end
