@@ -1,5 +1,10 @@
 <h1>Professor <%=@professor.name%>'s Students:</h1>
-<% @professor.students.each do |student| %>
-<%= student.name %>
-<br>
-<% end %>
+  <% @professor.students.each do |student| %>
+    <%= student.name %>
+    <br>
+  <% end %>
+  <%# <% ProfessorStudent.average_student_age %>
+  <% student_age_total = @professor.students.sum do |student| %>
+    <% student.age %>
+  <% end %>
+  <p>Average Student Age: <%= student_age_total/@professor.students.count.to_f %></p>
