@@ -1,5 +1,6 @@
 <section class="info">
-<h2>Professor <%= @professor.name.split(' ')[1]%>
+<h2>Professor <%= @professor.name.split(' ')[1]%></h2>
+<h3>Average student age: <%= @professor.average_age %></h3>
 <% @students.each do |stud|%>
 <li><%= stud.name%></li>
 <% end %>
