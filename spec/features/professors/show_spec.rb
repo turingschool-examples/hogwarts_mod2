@@ -10,13 +10,22 @@ describe 'As a visitor' do
       @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
       @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
       @longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
-    end
-    it 'Shows list of students the professor has' do
+
+      ProfessorStudent.create!(
+          professor_id: @snape.id,
+          student_id: @harry.id
+        )
+
+        ProfessorStudent.create!(
+          professor_id: @snape.id,
+          student_id: @longbottom.id
+        )
+      end
+      it 'I see a list of the names of the students the professors have.' do
       visit "/professors/#{@snape.id}"
 
-      expect(page).to have_content("#{@harry.name}")
-      expect(page).to have_content("#{@malfoy.name}")
-      expect(page).to have_content("#{@longbottom.name}")
+       expect(page).to have_content("#{@harry.name}")
+       expect(page).to have_content("#{@longbottom.name}")
     end
   end
 end
