@@ -36,7 +36,15 @@ describe 'As a visitor' do
         expect(page).to have_content(@longbottom.name)
         expect(page).to have_content("Num of professors: 1")
       end
+    end
 
+    it 'sorts students alphabetically' do
+      visit students_path
+      expect(current_path).to eq(students_path)
+
+      expect(all('.student-name')[0].text).to eq(@malfoy.name)
+      expect(all('.student-name')[1].text).to eq(@harry.name)
+      expect(all('.student-name')[2].text).to eq(@longbottom.name)
     end
   end
 end
