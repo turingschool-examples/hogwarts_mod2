@@ -20,14 +20,17 @@ RSpec.describe 'professor show page', type: :feature do
       visit professor_path(snape)
       expect(page).to have_content(harry.name)
       expect(page).to have_content(longbottom.name)
-
+      expect(page).to have_content("Students' Average Age: #{snape.students_avg_age}")
+      
       visit professor_path(hagarid)
       expect(page).to have_content(harry.name)
       expect(page).to have_content(malfoy.name)
+      expect(page).to have_content("Students' Average Age: #{hagarid.students_avg_age}")
       
       visit professor_path(lupin)
       expect(page).to have_content(harry.name)
       expect(page).to have_content(malfoy.name)
+      expect(page).to have_content("Students' Average Age: #{lupin.students_avg_age}")
     end
   end
 end
