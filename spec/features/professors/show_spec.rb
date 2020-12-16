@@ -32,4 +32,17 @@ describe "When I visit '/professors/:id'" do
     expect(page).to have_content(harry.name)
     expect(page).to have_content(malfoy.name)
   end
+  it "can see the average age of all the students for that prof" do
+    snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
+
+    harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+    malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+
+    ProfessorStudent.create(student_id: harry.id, professor_id: snape.id)
+    ProfessorStudent.create(student_id: malfoy.id, professor_id: snape.id)
+
+    visit "/professors/#{snape.id}"
+
+    expect(page).to have_content("Average Age: 11.5")
+  end
 end
