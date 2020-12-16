@@ -1,5 +1,5 @@
 <h3>All Students With The Count Of Their Professors</h3>
 
-<% @students.each do |student| %>
+<% @students.alpha.each do |student| %>
   <p><%=  student.name %>: <%= student.professors.count %></p>
 <% end%>
