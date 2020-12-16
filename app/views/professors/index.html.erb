@@ -1,7 +1,10 @@
 <h1>All Professors</h1>
 
+<p id=name>
 <% @professors.each do |professor| %>
-  Name: <%= professor.name %>
-  Age: <%= professor.age %>
-  Specialty: <%= professor.specialty %>
+  <b>Name:</b> <%= professor.name %>
+  <b>Age:</b> <%= professor.age %>
+  <b>Specialty:</b> <%= professor.specialty %>
+  <br></br>
   <% end %>
+  </p>
