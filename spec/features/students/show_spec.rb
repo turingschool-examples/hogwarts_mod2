@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Students index page' do
+RSpec.describe 'Students show page' do
   before :each do
     @snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
     @hagrid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
@@ -19,24 +19,13 @@ RSpec.describe 'Students index page' do
 
   end
 
-  it "displays each student in the system with number of professors" do
-    visit '/students'
+  it "displays professors associated with the student" do
+    visit "/students/#{@harry.id}"
 
-    expect(page).to have_content(@harry.name)
-    expect(page).to have_content(@harry.professors.count)
-    expect(page).to have_content(@malfoy.name)
-    expect(page).to have_content(@malfoy.professors.count)
-    expect(page).to have_content(@longbottom.name)
-    expect(page).to have_content(@longbottom.professors.count)
+    expect(page).to have_content(@snape.name)
+    expect(page).to have_content(@hagrid.name)
+    expect(page).to have_content(@lupin.name)
+
   end
 
-  xit "displays students alphabetically" do
-    visit "/students"
-
-    within '#name' do
-      expect(page.all('.name')[0]).to have_content("Draco Malfoy")
-      expect(page.all('.name')[1]).to have_content("Harry Potter")
-      expect(page.all('.name')[2]).to have_content("Neville Longbottom")
-    end
-  end
 end
