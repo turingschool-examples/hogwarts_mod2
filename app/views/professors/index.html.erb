@@ -1,0 +1,6 @@
+<% @professors.each do |professor| %>
+  <p> name: <%= link_to "#{professor.name}", professor_path(professor.id) %></p>
+  <p> age: <%= professor.age %></p>
+  <p> Specialty: <%= professor.specialty %></p><br>
+  <p> ------------------------------------------</p>
+<% end %>
