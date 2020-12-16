@@ -22,6 +22,8 @@ RSpec.describe "As a visitor" do
             expect(page).to have_content(@hermione.name)
             expect(page).to have_content(@neville.name)
             expect(page).to_not have_content(@luna.name)
+            
+            expect(page).to have_content("Average Age: #{@minerva.avg_student_age}")
         end
     end
 end
