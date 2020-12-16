@@ -30,9 +30,5 @@ RSpec.describe Student, type: :model do
     it 'counts the number of professors a student has' do
       expect(@harry.professor_count).to eq(3)
     end
-
-    it 'calculates the average age of students' do
-      expect(@students.average_age).to eq(12.5)
-    end
   end
 end
