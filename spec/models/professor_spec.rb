@@ -26,5 +26,12 @@ RSpec.describe Professor, type: :model do
 
       expect(@snape.students_avg_age).to eq((11 + 12 + 11) / 3)
     end
+    it 'can alphabetically order students' do
+      @longbottom = @snape.students.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
+      @harry = @snape.students.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      @malfoy = @snape.students.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+
+      expect(@snape.order_students_alpha).to eq([@malfoy, @harry, @longbottom])
+    end
   end
 end
