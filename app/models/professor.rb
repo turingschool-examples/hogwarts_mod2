@@ -5,6 +5,10 @@ class Professor <ApplicationRecord
   validates_presence_of :name, :age, :specialty
 
   def student_names
-    students.map {|student| student.name}
+    students.pluck(:name)
+  end
+
+  def average_student_age
+    students.average(:age)
   end
 end
