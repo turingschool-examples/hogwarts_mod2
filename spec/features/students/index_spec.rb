@@ -21,6 +21,7 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content("3")
       expect(page).to have_content(longbottom.name)
       expect(page).to have_content("1")
+      expect(harry.name).to appear_before(longbottom.name)
    
     end
   end

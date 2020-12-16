@@ -14,6 +14,7 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(hagarid.name)
       expect(page).to have_content(hagarid.age)
       expect(page).to have_content(hagarid.specialty)
+      expect(hagarid.name).to appear_before(snape.name)
     end
   end
 end
