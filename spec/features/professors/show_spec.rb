@@ -24,11 +24,6 @@ RSpec.describe 'As a visitor', type: :feature do
       
       expect(page).to have_content(@harry.name)
       expect(page).to have_content(@longbottom.name)
-      
-      visit "/professors/#{@lupin.id}"
-      
-      expect(page).to have_content(@harry.name)
-      expect(page).to have_content(@malfory.name)
     end
   end
 end
