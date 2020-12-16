@@ -7,6 +7,10 @@ class Professor <ApplicationRecord
     "Name: #{name}, Age: #{age}, Specialty: #{specialty}"
   end
 
+  def order_students_alpha
+    students.order(:name)
+  end
+
   def students_avg_age
     #Professor.select('professors.id, students.age').joins(:students).where('professors.id = 1').average(students.age).to_i
     students.sum do |student|

@@ -1,7 +1,7 @@
 <h1><%= @professor.name %>'s Student Roster</h1>
 <h3>Average Age: <%= @professor.students_avg_age %></h3>
 <li>
-<% @professor.students.each do |student| %>
+<% @professor.order_students_alpha.each do |student| %>
   <ul><%= student.name %></ul>
 <% end %>
 </li>
