@@ -19,7 +19,7 @@ RSpec.describe 'Students index page' do
   end
 
   it "displays names of all students and the number of professors each student has" do
-    visit '/student'
+    visit '/students'
 
     expect(page).to have_content(@harry.name)
     expect(page).to have_content(@malfoy.name)
