@@ -23,7 +23,7 @@ describe 'As a visitor' do
       end
       it 'Shows a list of students and number of professors for each student' do
         visit '/students'
-        save_and_open_page
+        
         expect(page).to have_content("#{@harry.name}: 1")
         expect(page).to have_content("#{@longbottom.name}: 1")
       end
