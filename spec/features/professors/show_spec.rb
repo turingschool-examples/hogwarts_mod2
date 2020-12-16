@@ -24,5 +24,22 @@ describe 'As a visitor' do
         expect(page).to_not have_content(@malfoy.name)
       end
     end
+
+    it 'I see the average age of all students for that professor.' do
+      snape_average_age = (@harry.age + @longbottom.age) / 2
+      lupin_average_age = @malfoy.age
+
+      visit "/professors/#{@snape.id}"
+
+      within '#average-student-age' do
+        expect(page).to have_content("Average Student Age: #{snape_average_age}")
+      end
+
+      visit "/professors/#{@lupin.id}"
+
+      within '#average-student-age' do
+        expect(page).to have_content("Average Student Age: #{lupin_average_age}")
+      end
+    end
   end
 end

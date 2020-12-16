@@ -1,0 +1,9 @@
+<h2>Students Index</h2>
+
+<ul id='student-list'>
+  <% @students.each do |student| %>
+    <li id="student-<%= student.id %>">
+      <%= student.name %>: <%= student.professors.count %>
+    </li>
+  <% end %>
+</ul>
