@@ -1,0 +1,7 @@
+<h2>All Hogwarts Students</h2>
+
+<ul>
+  <% @students.each do |student| %>
+    <li><%= "#{student.name}: #{student.professor_count}" %></li>
+  <% end %>
+</ul>
