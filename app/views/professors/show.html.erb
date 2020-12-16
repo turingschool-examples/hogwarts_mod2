@@ -1,0 +1,6 @@
+<h1><%= @professor.name %>'s Student Role: </h1>
+<% @professor.students.each do |student| %>
+  <section id="professor-<%=@professor.id%>">
+    <h4><%= student.name %></h4>
+  </section>
+<% end %>
