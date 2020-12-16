@@ -4,6 +4,6 @@ class Professor <ApplicationRecord
   has_many :students, through: :professor_students
 
   def student_names
-    pry
+    students.pluck(:name)
   end
 end
