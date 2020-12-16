@@ -1,0 +1,7 @@
+<h1> List of Professors <h1>
+
+<% @professors.alphabetical_professors.each do |professor| %>
+  <h4>Professor Name: <%= link_to "#{professor.name}", "/professors/#{professor.id}" %></h4>
+  <h4>Professor Age: <%= professor.age %></h4>
+  <h4>Professor specialty: <%= professor.specialty %></h4><br>
+ <% end %>
