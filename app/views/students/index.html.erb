@@ -1,8 +1,9 @@
 <h1>All Students</h1>
-<p id=name>
+
 <% @students.each do |student| %>
+<p id=name>
   <b>Name:</b> <%= link_to "#{student.name}", "/students/#{student.id}" %>,
   <b>Professors:</b> <%= student.professors.count %>
   <br><br>
+  </p>
   <% end %>
-</p>

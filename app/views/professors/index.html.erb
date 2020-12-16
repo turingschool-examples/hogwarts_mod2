@@ -1,10 +1,11 @@
 <h1>All Professors</h1>
 
-<p id=name>
+
 <% @professors.each do |professor| %>
+<p id=name>
   <b>Name:</b> <%= link_to "#{professor.name}", "/professors/#{professor.id}" %>
   <b>Age:</b> <%= professor.age %>
   <b>Specialty:</b> <%= professor.specialty %>
   <br><br>
-  <% end %>
   </p>
+  <% end %>

@@ -1,10 +1,12 @@
 <h1><%= @professor.name %></h1>
-<p id=name>
+
 <ul>
 <% @students.each do |student| %>
-  <li id=name><%= student.name %></li>
+<p id=name>
+  <%= student.name %>
+  <br><br>
+  </p>
   <% end %>
 </ul>
-</p>
 
 Average Age: <%= @students.average(:age) %>
