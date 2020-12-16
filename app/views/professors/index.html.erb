@@ -1,5 +1,5 @@
-<% @professors.each do |professor| %>
-  <li>
+<li>
+  <% @professors.each do |professor| %>
     <ul><%= professor.full_info %></ul>
-  </li>
-<% end %>
+  <% end %>
+</li>
