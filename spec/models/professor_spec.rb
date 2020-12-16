@@ -25,4 +25,23 @@ RSpec.describe Professor, type: :model do
       expect(ordered).to eq([@lupin, @hagarid, @snape])
     end
   end
+
+  describe 'average_student_age' do
+    before :each do
+      @lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
+
+      @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+  
+      ProfessorStudent.create!(professor_id: @lupin.id, student_id: @harry.id)
+      ProfessorStudent.create!(professor_id: @lupin.id, student_id: @malfoy.id)
+    end
+
+    it 'returns the average age of a professors students' do
+      avg = @lupin.average_student_age
+
+      expect(avg).to eq(((@harry.age + @malfoy.age).to_f / 2))
+    end
+
+  end
 end
