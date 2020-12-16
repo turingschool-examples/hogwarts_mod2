@@ -20,7 +20,7 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(harry.name)
       expect(page).to have_content("3")
       expect(page).to have_content(longbottom.name)
-      expect(page).to have_content("2")
+      expect(page).to have_content("1")
    
     end
   end
