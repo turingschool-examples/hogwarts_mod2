@@ -2,7 +2,7 @@
 <% @professors.each do |professor| %>
   <section id="professor-<%= professor.id %>">
     <h2 class='professor-name'><%= professor.name %></h2>
-    <%= professor.age %>
-    <%= professor.specialty %>
+    Age: <%= professor.age %><br>
+    <%= professor.specialty %><br>
   </section>
 <% end %>
