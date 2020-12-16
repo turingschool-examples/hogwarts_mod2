@@ -1,4 +1,6 @@
 <h1> All Students </h1>
+
 <% @students.each do |student| %>
-  <%= "#{student.name}: #{student.professors.count}"%><br>
+<hr>
+  <h2><%= "#{student.name}: #{student.professors.count}"%></h2><br>
   <% end %>

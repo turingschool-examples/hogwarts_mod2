@@ -16,16 +16,37 @@ describe 'As a visitor' do
           student_id: @harry.id
         )
 
-        ProfessorStudent.create!(
-          professor_id: @snape.id,
-          student_id: @longbottom.id
+      ProfessorStudent.create!(
+          professor_id: @lupin.id,
+          student_id: @harry.id
         )
+
+      ProfessorStudent.create!(
+          professor_id: @hagarid.id,
+          student_id: @harry.id
+        )
+
+      ProfessorStudent.create!(
+        professor_id: @snape.id,
+        student_id: @longbottom.id
+      )
+
+      ProfessorStudent.create!(
+        professor_id: @snape.id,
+        student_id: @malfoy.id
+      )
+
+      ProfessorStudent.create!(
+        professor_id: @lupin.id,
+        student_id: @malfoy.id
+      )
       end
       it 'Shows a list of students and number of professors for each student' do
         visit '/students'
 
-        expect(page).to have_content("#{@harry.name}: 1")
+        expect(page).to have_content("#{@harry.name}: 3")
         expect(page).to have_content("#{@longbottom.name}: 1")
+        expect(page).to have_content("#{@malfoy.name}: 2")
       end
       it 'Lists information alphabetically' do
         visit '/students'

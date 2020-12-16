@@ -5,6 +5,5 @@ class Professor < ApplicationRecord
 
   def student_average_age
     result = self.students.average(:age)
-      "Average Age: #{result}"
   end
 end

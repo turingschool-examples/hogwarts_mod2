@@ -12,16 +12,18 @@ describe 'As a visitor' do
       @longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
     end
     it 'Shows a list of professors and its attributes' do
+
       visit '/professors'
-      expect(page).to have_content("#{@snape.name}")
-      expect(page).to have_content("#{@snape.age}")
-      expect(page).to have_content("#{@snape.specialty}")
-      expect(page).to have_content("#{@hagarid.name}")
-      expect(page).to have_content("#{@hagarid.age}")
-      expect(page).to have_content("#{@hagarid.specialty}")
-      expect(page).to have_content("#{@lupin.name}")
-      expect(page).to have_content("#{@lupin.age}")
-      expect(page).to have_content("#{@lupin.specialty}")
+
+      expect(page).to have_content("Name: #{@snape.name}")
+      expect(page).to have_content("Age: #{@snape.age}")
+      expect(page).to have_content("Specialty: #{@snape.specialty}")
+      expect(page).to have_content("Name: #{@hagarid.name}")
+      expect(page).to have_content("Age: #{@hagarid.age}")
+      expect(page).to have_content("Specialty: #{@hagarid.specialty}")
+      expect(page).to have_content("Name: #{@lupin.name}")
+      expect(page).to have_content("Age: #{@lupin.age}")
+      expect(page).to have_content("Specialty: #{@lupin.specialty}")
     end
     it 'Lists information alphabetically' do
       visit '/professors'

@@ -26,6 +26,7 @@ describe 'As a visitor' do
 
        expect(page).to have_content("#{@harry.name}")
        expect(page).to have_content("#{@longbottom.name}")
+       expect(page).to_not have_content("#{@malfoy.name}")
     end
   end
 end
