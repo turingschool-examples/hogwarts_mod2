@@ -19,8 +19,8 @@ RSpec.describe "student index" do
   it "sees a list of students and the number of professors each student has" do 
     visit students_path
 
-    expect(page).to have_content(@harry.name: @harry.professors.count)
-    expect(page).to have_content(@malfoy.name: @malfoy.professors.count)
-    expect(page).to have_content(@longbottom.name: @longbottom.professors.count)
+    expect(page).to have_content("#{@harry.name}: #{@harry.professors.count}")
+    expect(page).to have_content("#{@malfoy.name}: #{@malfoy.professors.count}")
+    expect(page).to have_content("#{@longbottom.name}: #{@longbottom.professors.count}")
   end
 end

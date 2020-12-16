@@ -1,0 +1,9 @@
+<h1>Student Index</h1>
+
+<% @students.each do |student| %>
+<ul>
+<li><%= student.name %>: <%= student.professors.count %> professors</li>
+<li><%= student.age %></li>
+<li><%= student.house %></li>
+</ul>
+<% end %>
