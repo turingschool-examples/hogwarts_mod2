@@ -24,4 +24,10 @@ describe "students index page" do
     expect(page).to have_content(@malfoy.name + ": 1")
     expect(page).to have_content(@longbottom.name + ": 1")
   end
+
+  it "lists records in alphabetical order" do
+    pb = page.body
+    expect(pb.index(@malfoy.name)).to be < (pb.index(@harry.name))
+    expect(pb.index(@harry.name)).to be < (pb.index(@longbottom.name))
+  end
 end
