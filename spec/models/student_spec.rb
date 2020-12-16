@@ -19,6 +19,8 @@ RSpec.describe Student, type: :model do
       lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
 
       @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      @longbottom = Student.create(name: "Neville Longbottom" , age: 14 , house: "Gryffindor" )
+      @students = Student.all
 
       ProfessorStudent.create(student_id: @harry.id, professor_id: snape.id)
       ProfessorStudent.create(student_id: @harry.id, professor_id: hagarid.id)
@@ -27,6 +29,10 @@ RSpec.describe Student, type: :model do
 
     it 'counts the number of professors a student has' do
       expect(@harry.professor_count).to eq(3)
+    end
+
+    it 'calculates the average age of students' do
+      expect(@students.average_age).to eq(12.5)
     end
   end
 end
