@@ -4,7 +4,7 @@ RSpec.describe Professor, type: :model do
   before(:each) do
     @snape = Professor.create(name: "Severus Snape", age: 45, specialty: "Potions")
     @hagarid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
-    @lupin = Professor.create(name: "Remus @", age: 49 , specialty: "Defense Against The Dark Arts")
+    @lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
 
     @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
     @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
@@ -35,7 +35,11 @@ RSpec.describe Professor, type: :model do
   end
   # User Story 4
   it 'Knows the average age' do
-    expect(@snape.average_age).to eq(11)   
-    expect(@hagarid.average_age).to eq(12)   
+    expect(@snape.student_average_age).to eq(11)   
+    expect(@hagarid.student_average_age).to eq(12)   
+  end
+  # Extension 
+  it 'Lists info alphabetically (by name)'  do
+    expect(Professor.alpha_order.pluck(:name)).to eq(['Remus Lupin', 'Rubeus Hagrid', 'Severus Snape'])   
   end
 end
