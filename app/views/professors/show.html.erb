@@ -6,3 +6,4 @@
   <li><%= student.name %></li>
 <% end %>
 </ul>
+<p>Average Age: <%= @professor.students.average(:age).to_f %></p>
