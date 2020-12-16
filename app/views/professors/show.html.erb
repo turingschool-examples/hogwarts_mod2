@@ -3,8 +3,4 @@
     <%= student.name %>
     <br>
   <% end %>
-  <%# <% ProfessorStudent.average_student_age %>
-  <% student_age_total = @professor.students.sum do |student| %>
-    <% student.age %>
-  <% end %>
-  <p>Average Student Age: <%= student_age_total/@professor.students.count.to_f %></p>
+  <p>Average Student Age: <%=Professor.average_student_age %></p>
