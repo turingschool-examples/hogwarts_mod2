@@ -13,3 +13,37 @@
  *= require_tree .
  *= require_self
  */
+
+ .navbar {
+ list-style-type: none;
+ color:green;
+ margin: 0;
+ padding: 0;
+ overflow: hidden;
+ }
+ .navbar li {
+   color: white;
+   float: left;
+ }
+ li {
+   color: white;
+ font-size: 1.0em;
+ word-spacing: 0px;
+ padding: 5px;
+ }
+
+ li a {
+ display: block;
+ color: red;
+ padding: 2px;
+ }
+
+ li a:hover {
+ background-color: red;
+ }
+
+ body {
+   color: white;
+   background-image: url("https://nypost.com/wp-content/uploads/sites/2/2014/10/hpcover.jpg?quality=80&strip=all");
+   background-size: cover;
+ }
