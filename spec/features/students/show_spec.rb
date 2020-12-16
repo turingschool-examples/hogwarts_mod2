@@ -7,15 +7,11 @@ RSpec.describe 'Students show page' do
     @lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
 
     @harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
-    @malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
-    @longbottom = Student.create(name: "Neville Longbottom" , age: 11 , house: "Gryffindor" )
 
     ProfessorStudent.create(student_id: @harry.id, professor_id: @snape.id)
     ProfessorStudent.create(student_id: @harry.id, professor_id: @hagrid.id)
     ProfessorStudent.create(student_id: @harry.id, professor_id: @lupin.id)
-    ProfessorStudent.create(student_id: @malfoy.id, professor_id: @hagrid.id)
-    ProfessorStudent.create(student_id: @malfoy.id, professor_id: @lupin.id)
-    ProfessorStudent.create(student_id: @longbottom.id, professor_id: @snape.id)
+
 
   end
 
@@ -28,4 +24,12 @@ RSpec.describe 'Students show page' do
 
   end
 
+  it "displays professors alphabetically" do
+    visit "/students/#{@harry.id}"
+
+      expect(page.all('#name')[0]).to have_content("Remus Lupin")
+      expect(page.all('#name')[1]).to have_content("Rubeus Hagrid")
+      expect(page.all('#name')[2]).to have_content("Severus Snape")
+
+  end
 end

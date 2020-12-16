@@ -26,12 +26,11 @@ RSpec.describe 'Professors show page' do
     expect(page).to have_content(11.5)
   end
 
-  xit "displays students alphabetically" do
+  it "displays students alphabetically" do
     visit "/professors/#{@snape.id}"
 
-    within '#name' do
-      expect(page.all('.name')[0]).to have_content("Harry Potter")
-      expect(page.all('.name')[1]).to have_content("Neville Longbottom")
-    end
+      expect(page.all('#name')[0]).to have_content("Harry Potter")
+      expect(page.all('#name')[1]).to have_content("Neville Longbottom")
+
   end
 end

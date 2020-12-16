@@ -30,13 +30,11 @@ RSpec.describe 'Students index page' do
     expect(page).to have_content(@longbottom.professors.count)
   end
 
-  xit "displays students alphabetically" do
+  it "displays students alphabetically" do
     visit "/students"
 
-    within '#name' do
-      expect(page.all('.name')[0]).to have_content("Draco Malfoy")
-      expect(page.all('.name')[1]).to have_content("Harry Potter")
-      expect(page.all('.name')[2]).to have_content("Neville Longbottom")
-    end
+      expect(page.all('#name')[0]).to have_content("Draco Malfoy")
+      expect(page.all('#name')[1]).to have_content("Harry Potter")
+      expect(page.all('#name')[2]).to have_content("Neville Longbottom")
   end
 end
