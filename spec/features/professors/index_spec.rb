@@ -26,8 +26,8 @@ describe 'As a visitor' do
     it 'Lists information alphabetically' do
       visit '/professors'
 
-      expect("#{@lupin}").to appear_before("#{@hagarid}")
-      expect("#{@hagarid}").to appear_before("#{@snape}")
+      expect("#{@lupin.name}").to appear_before("#{@hagarid.name}")
+      expect("#{@hagarid.name}").to appear_before("#{@snape.name}")
     end
   end
 end
