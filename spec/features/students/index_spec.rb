@@ -22,8 +22,9 @@ RSpec.describe 'As a visitor', type: :feature do
     it 'I see a list of students and the number of professors each student has' do
       visit "/students"
       
-      expect(page).to have_content(@harry.name)
-      expect(page).to have_content(@longbottom.name)
+      expect(page).to have_content("#{@harry.name} : 3")
+      expect(page).to have_content("#{@malfoy.name} : 2")
+      expect(page).to have_content("#{@longbottom.name} : 1")
     end
   end
 end
