@@ -2,9 +2,9 @@
 
 <p id=name>
 <% @professors.each do |professor| %>
-  <b>Name:</b> <%= professor.name %>
+  <b>Name:</b> <%= link_to "#{professor.name}", "/professors/#{professor.id}" %>
   <b>Age:</b> <%= professor.age %>
   <b>Specialty:</b> <%= professor.specialty %>
-  <br></br>
+  <br><br>
   <% end %>
   </p>
