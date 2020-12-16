@@ -1,3 +1,5 @@
+<p>Average age of MY students: <%= @average %> </p>
 <% @students.each do |student| %>
-  <%= student.name %><br>
+  <%= student.name %>
+  <%= student.age %><br>
 <% end %>
