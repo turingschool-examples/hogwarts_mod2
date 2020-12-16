@@ -1,4 +1,4 @@
 <h1> List of Students and Number of Professors<h1>
-<% @students.each do |student| %>
+<% @students.alphabetical_students.each do |student| %>
   <h4>Student Name: <%= student.name %>: <%= student.professors.count %></h4><br>
 <% end %>
