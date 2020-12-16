@@ -17,9 +17,3 @@ RSpec.describe "As a visitor when I visit '/professors'", type: :feature do
   end
 end
 
-
-# I see a list of professors with the following information:
-# -Name
-# -Age
-# -Specialty
-# (e.g. "Name: Minerva McGonagall, Age: 204, Specialty: Transfiguration")
