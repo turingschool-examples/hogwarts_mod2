@@ -18,7 +18,7 @@ RSpec.describe "As a visitor" do
         it "displays a list of student names" do
             
             visit "/professors/#{@minerva.id}"
-            save_and_open_page
+
             expect(page).to have_content(@hermione.name)
             expect(page).to have_content(@neville.name)
             expect(page).to_not have_content(@luna.name)

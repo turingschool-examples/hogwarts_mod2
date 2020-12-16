@@ -9,4 +9,9 @@ class Student <ApplicationRecord
     def professor_count
         self.professors.count
     end
+
+    def self.sort_by_name
+        order('name')
+    end
+    
 end

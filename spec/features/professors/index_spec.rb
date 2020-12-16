@@ -15,10 +15,10 @@ RSpec.describe "As a visitor" do
         ProfessorStudent.create!(professor: @albus, student: @luna)
     end
     describe "When I visit professors index page" do
-        it "displays a list of professors and their data" do
+        it "displays a list of professors, alphabetically, and their data" do
             
             visit '/professors'
-
+            save_and_open_page
             expect(page).to have_content(@minerva.name)
             expect(page).to have_content(@minerva.age)
             expect(page).to have_content(@minerva.specialty)
