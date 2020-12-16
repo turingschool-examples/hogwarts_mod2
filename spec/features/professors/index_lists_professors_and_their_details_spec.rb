@@ -10,7 +10,7 @@ RSpec.describe 'As a user' do
     
     it 'lists all professors and their information' do
       visit '/professors'
-      save_and_open_page
+      
       within("#prof-section-#{@snape.id}") do
         expect(page).to have_content("Name: #{@snape.name}")
         expect(page).to have_content("Age: #{@snape.age}")
