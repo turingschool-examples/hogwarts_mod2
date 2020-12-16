@@ -18,7 +18,7 @@ RSpec.describe "Index" do
     visit '/students'
 
     harry_content = "Harry Potter: 3"
-    malfoy_content = "Draco Malfoy: 5"
+    malfoy_content = "Draco Malfoy: 1"
     expect(page).to have_content(harry_content)
     expect(page).to have_content(malfoy_content)
   end
