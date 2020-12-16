@@ -6,4 +6,7 @@ class Student <ApplicationRecord
     validates :age, presence: true
     validates :house, presence: true
 
+    def professor_count
+        self.professors.count
+    end
 end
