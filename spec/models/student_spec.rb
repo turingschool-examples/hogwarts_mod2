@@ -33,4 +33,8 @@ RSpec.describe Student, type: :model do
     expect(@harry.professor_count).to eq(3)
     expect(@malfoy.professor_count).to eq(2)
   end
+   # Extension 
+  it 'Lists info alphabetically (by name)'  do
+    expect(Student.alpha_order.pluck(:name)).to eq(['Draco Malfoy', 'Harry Potter', 'Neville Longbottom'])   
+  end
 end
