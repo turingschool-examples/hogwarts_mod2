@@ -23,5 +23,11 @@ describe 'As a visitor' do
       expect(page).to have_content("#{@lupin.age}")
       expect(page).to have_content("#{@lupin.specialty}")
     end
+    it 'Lists information alphabetically' do
+      visit '/professors'
+
+      expect("#{@lupin}").to appear_before("#{@hagarid}")
+      expect("#{@hagarid}").to appear_before("#{@snape}")
+    end
   end
 end
