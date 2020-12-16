@@ -2,7 +2,7 @@
 
 <h2>Students</h2>
 <ul>
-<% @professor.students.each do |student| %>
+<% @professor.students.order(:name).each do |student| %>
   <li><%= student.name %></li>
 <% end %>
 </ul>
