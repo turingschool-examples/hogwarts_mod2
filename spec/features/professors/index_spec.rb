@@ -21,4 +21,10 @@ describe "professors index page" do
     expect(page).to have_content(@lupin.age)
     expect(page).to have_content(@lupin.specialty)
   end
+
+  it "lists records in alphabetical order" do
+    pb = page.body
+    expect(pb.index(@lupin.name)).to be < (pb.index(@hagarid.name))
+    expect(pb.index(@hagarid.name)).to be < (pb.index(@snape.name))
+  end
 end
