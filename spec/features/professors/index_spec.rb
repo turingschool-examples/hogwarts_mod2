@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'As A Visitor' do
   before :each do
     @snape = Professor.create!(name: "Severus Snape", age: 45, specialty: "Potions")
-    @hagrid = Professor.create(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
-    @lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
+    @hagrid = Professor.create!(name: "Rubeus Hagrid", age: 38 , specialty: "Care of Magical Creatures")
+    @lupin = Professor.create!(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
   end
 
-  describe 'When I Visist Professors Index Page' do
+  describe 'When I Visit Professors Index Page' do
     it 'shows all professors name, age and course(specialty)' do
       visit '/professors'
 
