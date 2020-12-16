@@ -18,13 +18,14 @@ RSpec.describe "As a visitor" do
         it "displays a list of students, alphabetically, and the number of professors for each" do
             
             visit '/students'
-            save_and_open_page
-            expect(page).to have_content(@hermione.name)
-            expect(page).to have_content(@neville.name)
-            expect(page).to have_content(@luna.name)
-            expect(page).to have_content(@luna.professor_count)
-            expect(page).to have_content(@luna.professor_count)
-            expect(page).to have_content(@luna.professor_count)
+            
+            expect(page.all("#student")[0]).to have_content(@hermione.name)
+            expect(page.all("#student")[1]).to have_content(@luna.name)
+            expect(page.all("#student")[2]).to have_content(@neville.name)
+            
+            expect(page.all("#student")[0]).to have_content(@hermione.professor_count)
+            expect(page.all("#student")[1]).to have_content(@luna.professor_count)
+            expect(page.all("#student")[2]).to have_content(@luna.professor_count)
         end
     end
 end
