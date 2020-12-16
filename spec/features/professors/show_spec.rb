@@ -17,5 +17,18 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(malfoy.name)
 
     end
+
+    it 'has average age of students' do
+      lupin = Professor.create(name: "Remus Lupin", age: 49 , specialty: "Defense Against The Dark Arts")
+      harry = Student.create(name: "Harry Potter" , age: 11 , house: "Gryffindor" )
+      malfoy = Student.create(name: "Draco Malfoy" , age: 12 , house: "Slytherin" )
+
+      ProfessorStudent.create(student_id: harry.id, professor_id: lupin.id)
+      ProfessorStudent.create(student_id: malfoy.id, professor_id: lupin.id)
+
+      visit "/professors/#{lupin.id}"
+
+      expect(page).to have_content("11.5")
+    end
   end
 end
