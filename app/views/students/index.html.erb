@@ -1,6 +1,6 @@
 <h1>Student List + Teacher Count Per Student</h1>
 <li>
-<% @students.each do |student| %>
+<% @students.order(:name).each do |student| %>
   <ul><%= student.info %></ul>
 <% end %>
 </li>
