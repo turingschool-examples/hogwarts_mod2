@@ -6,4 +6,12 @@ class Student <ApplicationRecord
   def professor_count
     professors.count
   end
+
+  def self.avg_age
+    average(:age)
+  end
+
+  def self.alphabetical
+    order(:name)
+  end
 end
