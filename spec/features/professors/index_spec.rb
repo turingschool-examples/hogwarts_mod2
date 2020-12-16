@@ -13,15 +13,15 @@ describe 'As a visitor' do
     end
     it 'Shows a list of professors and its attributes' do
       visit '/professors'
-      expect(page).to have_content("#{snape.name}")
-      expect(page).to have_content("#{snape.age}")
-      expect(page).to have_content("#{snape.specialty}")
-      expect(page).to have_content("#{hagarid.name}")
-      expect(page).to have_content("#{hagarid.age}")
-      expect(page).to have_content("#{hagarid.specialty}")
-      expect(page).to have_content("#{lupin.name}")
-      expect(page).to have_content("#{lupin.age}")
-      expect(page).to have_content("#{lupin.specialty}")
+      expect(page).to have_content("#{@snape.name}")
+      expect(page).to have_content("#{@snape.age}")
+      expect(page).to have_content("#{@snape.specialty}")
+      expect(page).to have_content("#{@hagarid.name}")
+      expect(page).to have_content("#{@hagarid.age}")
+      expect(page).to have_content("#{@hagarid.specialty}")
+      expect(page).to have_content("#{@lupin.name}")
+      expect(page).to have_content("#{@lupin.age}")
+      expect(page).to have_content("#{@lupin.specialty}")
     end
   end
 end
