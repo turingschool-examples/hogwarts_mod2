@@ -1,7 +1,7 @@
 <h2>Students Index</h2>
 
 <ul id='student-list'>
-  <% @students.each do |student| %>
+  <% @students.sort_alphabetically_by_name.each do |student| %>
     <li id="student-<%= student.id %>">
       <%= student.name %>: <%= student.professors.count %>
     </li>

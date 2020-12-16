@@ -1,7 +1,7 @@
 <h2>Professors Index</h2>
 
 <ul id='professor-list'>
-  <% @professors.each do |professor| %>
+  <% @professors.sort_alphabetically_by_name.each do |professor| %>
     <li id="professor-<%= professor.id %>">
       Name: <%= professor.name %>
       Age: <%= professor.age %>
