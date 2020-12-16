@@ -4,5 +4,7 @@ class Professor <ApplicationRecord
   has_many :professor_students
   has_many :students, through: :professor_students, class_name: 'Student'
 
-
+  def students_ave_age
+    self.students.average(:age)
+  end
 end
