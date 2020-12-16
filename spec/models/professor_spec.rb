@@ -33,4 +33,9 @@ RSpec.describe Professor, type: :model do
     expect(@snape.student_names).to eq(['Harry Potter', 'Neville Longbottom'])
     expect(@lupin.student_names).to eq(['Harry Potter', 'Draco Malfoy'])
   end
+  # User Story 4
+  it 'Knows the average age' do
+    expect(@snape.average_age).to eq(11)   
+    expect(@hagarid.average_age).to eq(12)   
+  end
 end

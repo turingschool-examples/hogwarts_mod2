@@ -25,5 +25,11 @@ RSpec.describe 'As a visitor', type: :feature do
       expect(page).to have_content(@harry.name)
       expect(page).to have_content(@longbottom.name)
     end
+    # User Story 4
+    it 'I see the average age of all students for that professor' do
+      visit "/professors/#{@snape.id}"
+      
+      expect(page).to have_content("Average Age: ")
+    end
   end
 end

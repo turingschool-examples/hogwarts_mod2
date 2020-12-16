@@ -6,4 +6,8 @@ class Professor <ApplicationRecord
   def student_names
     students.pluck(:name)
   end
+
+  def average_age
+    students.average(:age).round
+  end
 end
